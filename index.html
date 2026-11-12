@@ -1,0 +1,4395 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- <meta name="robots" content="noindex" /> -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>100 лет СПбГУП</title>
+    <meta
+      name="description"
+      content="100 лет Санкт-Петербургскому Гуманитарному университету профсоюзов: летопись века, почётные доктора, Лихачёвские чтения, кампус и выпускники."
+    />
+    <meta
+      property="og:title"
+      content="Век служения культуре · 100 лет СПбГУП"
+    />
+    <meta property="og:image" content="img/hero.jpg" />
+    <link rel="icon" href="img/logo-mark-red.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap"
+    />
+    <link rel="stylesheet" href="assets/style.css?v=20261015" />
+    <link rel="stylesheet" href="assets/blocks-2026-10.css?v=20261103" />
+    <style id="alumni-review-styles">
+      #alumni .alum__review {
+        grid-column: 1 / -1;
+        min-width: 0;
+        align-self: start;
+      }
+      #alumni .alum__review .quote.is-clamped {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+        line-height: 1.6;
+        overflow: hidden;
+        overflow-wrap: anywhere;
+        max-height: 6.4em;
+      }
+      #alumni .alum__more {
+        display: inline-block;
+        margin-top: 10px;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid var(--gold, #a8834f);
+        padding: 4px 0;
+        font: 500 13px/1.5 var(--sans, Arial, sans-serif);
+        text-align: left;
+        color: var(--burgundy, #8e070b);
+        cursor: pointer;
+      }
+      #alumni .alum__more[hidden] {
+        display: none !important;
+      }
+      #alumni .alum__more:hover {
+        color: var(--burgundy-dark, #5a0407);
+        border-color: currentColor;
+      }
+      #alumni .alum__more:focus-visible,
+      #alumni .alumni-review-dialog__close:focus-visible {
+        outline: 2px solid var(--gold, #a8834f);
+        outline-offset: 3px;
+      }
+      #alumni .alumni-review-dialog {
+        padding: 0;
+        border: 1px solid var(--gold, #a8834f);
+        margin: auto;
+        width: min(720px, calc(100vw - 32px));
+        max-width: none;
+        max-height: calc(100vh - 48px);
+        max-height: calc(100dvh - 48px);
+        overflow: hidden;
+        background: var(--white, #fff);
+        color: var(--text, #3c3c3c);
+        box-shadow: 0 24px 80px rgba(20, 4, 5, 0.25);
+      }
+      #alumni .alumni-review-dialog[open] {
+        display: flex;
+        flex-direction: column;
+      }
+      #alumni .alumni-review-dialog::backdrop {
+        background: rgba(20, 4, 5, 0.65);
+        backdrop-filter: blur(3px);
+      }
+      #alumni .alumni-review-dialog__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex: none;
+        padding: 18px 24px 0 40px;
+      }
+      #alumni .alumni-review-dialog .cap {
+        color: var(--burgundy, #8e070b);
+        font-size: 11px;
+      }
+      #alumni .alumni-review-dialog .cap::before {
+        background: var(--gold, #a8834f);
+      }
+      #alumni .alumni-review-dialog__close {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        color: var(--burgundy, #8e070b);
+        cursor: pointer;
+      }
+      #alumni .alumni-review-dialog__close:hover {
+        background: var(--tint, #f8f1ef);
+      }
+      #alumni .alumni-review-dialog__body {
+        padding: 20px 40px 40px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        min-height: 0;
+      }
+      #alumni .alumni-review-dialog__body .h3 {
+        font-size: clamp(24px, 3vw, 32px);
+        color: var(--burgundy, #8e070b);
+      }
+      #alumni .alumni-review-dialog__quote {
+        margin: 24px 0 0;
+      }
+      #alumni .alumni-review-dialog__text {
+        font: italic 300 clamp(16px, 1.2vw, 19px) / 1.8
+          var(--serif, Georgia, serif);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+      #alumni .alumni-review-dialog__author {
+        display: grid;
+        gap: 6px;
+        border-top: 1px solid var(--line, #e7e3dc);
+        padding-top: 22px;
+        margin-top: 28px;
+        overflow-wrap: anywhere;
+      }
+      #alumni .alumni-review-dialog__name {
+        font: 500 16px/1.4 var(--sans, Arial, sans-serif);
+        color: var(--burgundy, #8e070b);
+      }
+      #alumni .alumni-review-dialog__year,
+      #alumni .alumni-review-dialog__role {
+        font-size: var(--fs-small, 14px);
+        color: var(--muted, #6b6b6b);
+      }
+      #alumni .alumni-review-dialog [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 600px) {
+        #alumni .alumni-review-dialog {
+          max-height: calc(100vh - 24px);
+          max-height: calc(100dvh - 24px);
+          width: calc(100vw - 24px);
+        }
+        #alumni .alumni-review-dialog__head {
+          padding: 12px 12px 0 22px;
+        }
+        #alumni .alumni-review-dialog__body {
+          padding: 16px 22px 28px;
+        }
+      }
+    </style>
+    <style id="alumni-slider-styles">
+      #alumni .alumni--slider {
+        --alumni-slides-per-view: 2;
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 4px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: auto;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      #alumni .alumni--slider::-webkit-scrollbar {
+        display: none;
+      }
+      #alumni .alumni--slider > .alum {
+        flex: 0 0 calc((100% - 24px) / 2);
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+      #alumni .alumni-slider__nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line, #e7e3dc);
+      }
+      #alumni .alumni-slider__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid var(--gold, #a8834f);
+        background: transparent;
+        color: var(--burgundy, #8e070b);
+        font: 400 24px/1 var(--sans, Arial, sans-serif);
+        cursor: pointer;
+        transition: background-color 160ms, color 160ms, opacity 160ms;
+      }
+      #alumni .alumni-slider__button:not(:disabled):hover {
+        background: var(--burgundy, #8e070b);
+        border-color: var(--burgundy, #8e070b);
+        color: #fff;
+      }
+      #alumni .alumni-slider__button:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+      #alumni .alumni-slider__count {
+        min-width: 138px;
+        color: var(--muted, #6b6b6b);
+        font: 400 var(--fs-small, 14px) / 1.4 var(--sans, Arial, sans-serif);
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+      }
+      #alumni .alumni--slider:focus-visible,
+      #alumni .alumni-slider__button:focus-visible {
+        outline: 2px solid var(--gold, #a8834f);
+        outline-offset: 3px;
+      }
+      @media (max-width: 1024px) {
+        #alumni .alumni--slider {
+          --alumni-slides-per-view: 1;
+        }
+        #alumni .alumni--slider > .alum {
+          flex-basis: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        #alumni .alumni-slider__nav {
+          justify-content: center;
+          gap: 10px;
+          margin-top: 20px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #alumni .alumni-slider__button {
+          transition: none;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+      ym(2277589, "init", {
+        webvisor: true,
+        trackHash: true,
+        clickmap: true,
+        ecommerce: "dataLayer",
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/2277589"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+  </head>
+  <body>
+    <script>
+      try {
+        var d = document.documentElement;
+        if (matchMedia("(max-width: 600px)").matches) {
+          if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+            d.classList.add("has-intro");
+        } else d.classList.add("has-flight");
+      } catch (e) {}
+    </script>
+    <a class="visually-hidden" href="#main">Перейти к содержанию</a>
+    <header class="site-header">
+      <div class="wrap site-header__in">
+        <a class="brand" href="#top" aria-label="СПбГУП, 100 лет — в начало"
+          ><img
+            src="img/logo-h-short-white.svg"
+            alt="100 лет СПбГУП"
+            width="321"
+            height="84"
+        /></a>
+        <nav class="nav" aria-label="Разделы">
+          <a href="#chronicle">Хроника</a><a href="#congrats">Поздравления</a
+          ><a href="#people">Люди</a><a href="#campus">Кампус</a
+          ><a href="#olgino">Гимназия</a><a href="#branches">Филиалы</a><a href="#alumni">Выпускники</a
+          ><a href="#press">СМИ</a>
+        </nav>
+        <a class="btn btn--outline-light" href="#congrats">Поздравить</a
+        ><button
+          class="burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+    <svg class="flight" aria-hidden="true"></svg>
+    <div
+      class="menu"
+      id="menu"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Меню"
+    >
+      <div class="menu__top">
+        <img src="img/logo-h-short-white.svg" alt="100 лет СПбГУП" /><button
+          class="menu__close"
+          type="button"
+          aria-label="Закрыть меню"
+        >
+          ✕
+        </button>
+      </div>
+      <nav aria-label="Разделы">
+        <a href="#chronicle">Хроника</a><a href="#congrats">Поздравления</a
+        ><a href="#people">Люди</a><a href="#campus">Кампус</a
+        ><a href="#olgino">Гимназия «Ольгино»</a><a href="#branches">Филиалы</a><a href="#alumni">Выпускники</a
+        ><a href="#press">СМИ</a>
+      </nav>
+      <a class="btn btn--white" href="#congrats">Поздравить Университет</a>
+    </div>
+    <main id="main">
+      <div class="intro" aria-hidden="true">
+        <canvas class="fw" aria-hidden="true"></canvas
+        ><svg class="lm" aria-hidden="true"></svg>
+        <span class="intro__hint">Листайте вниз<i></i></span>
+      </div>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="fwd" aria-hidden="true"></div>
+        <div class="wrap">
+          <div class="hero__grid">
+            <img
+              class="hero__logo"
+              src="img/logo-v-full-white.svg"
+              alt="100 лет. Санкт-Петербургский Гуманитарный университет профсоюзов"
+              width="287"
+              height="160"
+            />
+            <div class="hero__text">
+              <h1 class="h1" id="hero-title">Век служения культуре</h1>
+              <p class="lead">
+                От рабочих кружков Петербурга конца XIX века до лидера
+                евразийского гуманитарного образования.
+              </p>
+              <div class="btns">
+                <a class="btn btn--white" href="#chronicle"
+                  >Узнать историю вуза</a
+                ><a class="btn btn--outline-light" href="#congrats"
+                  >Поздравить Университет</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="band">
+        <div class="wrap">
+          <figure>
+            <video
+              id="gup-video"
+              class="responsive-video align-center"
+              data-showtitle="false"
+              poster="https://www.gup.ru/enroll/help/dod/SPbGUP.jpg"
+              muted
+              playsinline
+              webkit-playsinline
+              preload="metadata"
+              autoplay
+              disablepictureinpicture
+              disableremoteplayback
+              data-start-at="6"
+              aria-label="Презентационный фильм СПбГУП"
+            >
+              <source
+                src="https://www.gup.ru/upload/iblock/937/85l39k4zssb8vcw7nmuz44f98pw29ktg/Uni_2026.mp4"
+                type="video/mp4"
+              />
+              <!-- <source
+                src="https://www.gup.ru/upload/iblock/937/85l39k4zssb8vcw7nmuz44f98pw29ktg/SPbGUP_MASTER_v2.mp4"
+                type="video/mp4"
+              /> -->
+            </video>
+            <style>
+              .ch-b {
+                filter: grayscale(1);
+              }
+              video.responsive-video,
+              video.responsive-video.align-center {
+                clear: both;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                display: block;
+                background: #000;
+                pointer-events: none;
+                -webkit-tap-highlight-color: transparent;
+              }
+              video.responsive-video::-webkit-media-controls,
+              video.responsive-video::-webkit-media-controls-enclosure,
+              video.responsive-video::-webkit-media-controls-panel,
+              video.responsive-video::-webkit-media-controls-play-button,
+              video.responsive-video::-webkit-media-controls-start-playback-button,
+              video.responsive-video::-webkit-media-controls-overlay-play-button,
+              video.responsive-video::-webkit-media-controls-picture-in-picture-button,
+              video.responsive-video::-webkit-media-controls-fullscreen-button,
+              video.responsive-video::-webkit-media-controls-volume-slider,
+              video.responsive-video::-webkit-media-controls-timeline,
+              video.responsive-video::-webkit-media-controls-current-time-display,
+              video.responsive-video::-webkit-media-controls-time-remaining-display,
+              video.responsive-video::-webkit-media-controls-mute-button,
+              video.responsive-video::-webkit-media-controls-toggle-closed-captions-button,
+              video.responsive-video::-webkit-media-controls-seek-back-button,
+              video.responsive-video::-webkit-media-controls-seek-forward-button,
+              video.responsive-video::-webkit-media-controls-rewind-button,
+              video.responsive-video::-webkit-media-controls-return-to-realtime-button,
+              video.responsive-video::-webkit-media-controls-zoomed,
+              video.responsive-video::-internal-media-controls-download-button {
+                display: none !important;
+                -webkit-appearance: none !important;
+                opacity: 0 !important;
+                width: 0 !important;
+                height: 0 !important;
+              }
+              video.responsive-video::-moz-media-controls {
+                display: none !important;
+              }
+            </style>
+            <script>
+              (function () {
+                document
+                  .querySelectorAll("video[data-start-at]")
+                  .forEach(function (v) {
+                    var START = parseFloat(v.dataset.startAt) || 0;
+                    var seeked = false;
+                    v.controls = false;
+                    v.removeAttribute("controls");
+                    if (window.MutationObserver) {
+                      new MutationObserver(function () {
+                        if (v.hasAttribute("controls")) {
+                          v.controls = false;
+                          v.removeAttribute("controls");
+                        }
+                      }).observe(v, {
+                        attributes: true,
+                        attributeFilter: ["controls"],
+                      });
+                    }
+                    v.muted = true;
+                    v.defaultMuted = true;
+                    v.setAttribute("muted", "");
+                    v.playsInline = true;
+                    v.setAttribute("playsinline", "");
+                    function seekAndPlay() {
+                      if (!seeked) {
+                        seeked = true;
+                        try {
+                          v.currentTime = START;
+                        } catch (e) {}
+                      }
+                      var p = v.play();
+                      if (p && p.catch) p.catch(function () {});
+                    }
+                    if (v.readyState >= 1) seekAndPlay();
+                    else
+                      v.addEventListener("loadedmetadata", seekAndPlay, {
+                        once: true,
+                      });
+                    v.addEventListener("play", function onFirstPlay() {
+                      if (!seeked) {
+                        seeked = true;
+                        v.currentTime = START;
+                      }
+                      v.removeEventListener("play", onFirstPlay);
+                    });
+                    v.addEventListener("ended", function () {
+                      v.currentTime = START;
+                      var p = v.play();
+                      if (p && p.catch) p.catch(function () {});
+                    });
+                    if ("IntersectionObserver" in window) {
+                      new IntersectionObserver(
+                        function (entries) {
+                          entries.forEach(function (e) {
+                            if (e.isIntersecting) {
+                              if (v.paused) seekAndPlay();
+                            } else if (!v.paused) v.pause();
+                          });
+                        },
+                        { threshold: 0.25 }
+                      ).observe(v);
+                    }
+                  });
+              })();
+            </script>
+          </figure>
+        </div>
+      </div>
+      <section class="section" id="numbers" aria-labelledby="numbers-title">
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">Век в цифрах</span>
+            <div class="head__text">
+              <h2 class="h2" id="numbers-title">
+                Университет, которому доверяют
+              </h2>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="pp">
+              <img
+                src="img/main_4-(1)_добавлена-девушка_r_09_10_2026_полный-размер.jpg?v=2"
+                alt="Студенты СПбГУП 1 сентября"
+                loading="lazy"
+              />
+            </div>
+            <div class="stats__nums">
+              <div class="stat">
+                <div class="num">17 998</div>
+                <p>
+                  выпускников за последние 15 лет — не трудоустроены лишь 14
+                  человек
+                </p>
+              </div>
+              <div class="stat">
+                <div class="num">36</div>
+                <p>
+                  человек на место — конкурс на места Минобрнауки в 2026 году
+                </p>
+              </div>
+              <div class="stat">
+                <div class="num">700+</div>
+                <p>выступлений приглашённых членов РАН за последние 35 лет</p>
+              </div>
+              <div class="stat">
+                <div class="num">59</div>
+                <p>
+                  стран — география Международных Лихачёвских научных чтений
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section section--tint"
+        id="decree"
+        aria-labelledby="decree-title"
+      >
+        <div class="wrap">
+          <div class="decree" data-gallery>
+            <button
+              class="decree__doc pp--zoom"
+              type="button"
+              data-src="img/rasp-2745-1.jpg"
+              data-cap="Распоряжение Правительства Российской Федерации от 30 сентября 2026 г. № 2745-р. Страница 1 из 3"
+              aria-label="Открыть документ: страница 1 из 3"
+            >
+              <img
+                src="img/rasp-2745-1.jpg"
+                alt="Первая страница распоряжения Правительства Российской Федерации № 2745-р"
+                loading="lazy"
+                width="910"
+                height="1287"
+              />
+              <span class="decree__pages">3 стр.</span>
+            </button>
+            <span class="decree__hidden"
+              ><button
+                class="pp--zoom"
+                type="button"
+                tabindex="-1"
+                aria-hidden="true"
+                data-src="img/rasp-2745-2.jpg"
+                data-cap="Состав организационного комитета. Страница 2 из 3"
+              ></button
+              ><button
+                class="pp--zoom"
+                type="button"
+                tabindex="-1"
+                aria-hidden="true"
+                data-src="img/rasp-2745-3.jpg"
+                data-cap="Состав организационного комитета. Страница 3 из 3"
+              ></button
+            ></span>
+            <div class="decree__text">
+              <span class="cap">Официально</span>
+              <h2 class="h2" id="decree-title">
+                Правительство России — о праздновании 100‑летия Университета
+              </h2>
+              <p class="decree__meta">
+                Распоряжение Правительства Российской Федерации от 30 сентября
+                2026 г. № 2745-р
+              </p>
+              <div class="btns">
+                <a
+                  class="btn btn--burgundy"
+                  href="docs/rasporyazhenie-pravitelstva-rf-2745-r.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Читать распоряжение (PDF) →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="chronicle" aria-labelledby="chronicle-title">
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">Хроника</span>
+            <div class="head__text">
+              <h2 class="h2" id="chronicle-title">Сто лет в шести главах</h2>
+            </div>
+          </div>
+          <div class="chron-link">
+            <span
+              >Шесть глав — коротко о главном. Все события века собраны в
+              официальной хронике Университета.</span
+            ><a class="chapter__all" href="chronicle.html"
+              >Полная хроника 1926–2026 →</a
+            >
+          </div>
+          <div class="tabs" role="tablist" aria-label="Главы хроники">
+            <button
+              class="tab"
+              role="tab"
+              id="tab-0"
+              aria-controls="ch-0"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <b>I</b><span class="tab__years">1926–1945</span
+              ><span class="tab__title">Из рабочих кружков — в вуз</span>
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-1"
+              aria-controls="ch-1"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <b>II</b><span class="tab__years">1945–1990</span
+              ><span class="tab__title">Высшая Профсоюзная Школа Культуры</span>
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-2"
+              aria-controls="ch-2"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <b>III</b><span class="tab__years">1991–1999</span
+              ><span class="tab__title">Уникальный университетский кампус</span>
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-3"
+              aria-controls="ch-3"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <b>IV</b><span class="tab__years">2000–2009</span
+              ><span class="tab__title">Универсум культуры</span>
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-4"
+              aria-controls="ch-4"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <b>V</b><span class="tab__years">2010–2025</span
+              ><span class="tab__title">Университет креативных индустрий</span>
+            </button>
+            <button
+              class="tab"
+              role="tab"
+              id="tab-5"
+              aria-controls="ch-5"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <b>VI</b><span class="tab__years">2026 →</span
+              ><span class="tab__title">Вступая во второе столетие</span>
+            </button>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-0"
+            aria-labelledby="tab-0"
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/telegramma_1600.jpg"
+                    data-cap="Телеграмма «Всем губотделам союзов» об открытии школы профдвижения 9 октября 1926 года"
+                    aria-label="Открыть фото: Телеграмма «Всем губотделам союзов» об открытии школы профдвижения 9 октября 1926 года"
+                  >
+                    <img
+                      src="img/telegramma_1600.jpg"
+                      alt="Телеграмма «Всем губотделам союзов» об открытии школы профдвижения 9 октября 1926 года"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>
+                    Телеграмма «Всем губотделам союзов» об открытии школы
+                    профдвижения 9 октября 1926 года
+                  </figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 3 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/photo_2026-10-13_11-54-35.jpg"
+                      data-cap="Слушатели Школы на занятии, 1930-е"
+                      aria-label="Открыть фото: Слушатели Школы на занятии, 1930-е"
+                    >
+                      <img
+                        class="ch-b"
+                        src="img/photo_2026-10-13_11-54-35.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/photo_2026-10-13_11-54-35-(2)_1600_1108.jpg"
+                      data-cap="Выдача книг в библиотеке Школы, 1930-е"
+                      aria-label="Открыть фото: Выдача книг в библиотеке Школы, 1930-е"
+                    >
+                      <img
+                        src="img/photo_2026-10-13_11-54-35-(2)_1600_1108.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/photo_2026-10-13_11-53-43_1600_1108.jpg"
+                      data-cap="Швейная мастерская Школы, 1930-е"
+                      aria-label="Открыть фото: Швейная мастерская Школы, 1930-е"
+                    >
+                      <img
+                        src="img/photo_2026-10-13_11-53-43_1600_1108.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no"><b>I</b><span>1926 — 1945</span></div>
+                <h3 class="h3">Из рабочих кружков — в вуз</h3>
+                <p class="chapter__body is-clamped" id="chb-0">
+                  Всё началось с телеграммы «Всем губотделам союзов»: открытие
+                  двухгодичной школы профдвижения состоится 9 октября 1926 года
+                  в 11 часов утра во Дворце труда. Школа готовила тех, кто
+                  строил культурную жизнь города, — организаторов клубов,
+                  библиотек, рабочих кружков. Стипендия слушателей, 125 рублей,
+                  была больше зарплаты рабочего-металлиста. Лекций в привычном
+                  смысле не было: преподаватели работали консультантами, а
+                  «курсанты» отвечали за успехи всей группы. Школа начала работу
+                  в особняке Половцова на Большой Морской, а в течение
+                  нескольких лет обзавелась пятью общежитиями, швейной
+                  мастерской и кафедрой искусствоведения. Война оборвала эту
+                  историю: директор Савелий Буслаев ушёл на фронт, студентки —
+                  на курсы медсестёр, в аудиториях разместился полк народного
+                  ополчения. Практически весь довоенный коллектив погиб в годы
+                  блокады и на фронте. Работа Школы возобновилась летом 1944
+                  года.
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-0"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates">
+                  <div>
+                    <dt>1926</dt>
+                    <dd>открытие школы во Дворце труда</dd>
+                  </div>
+                  <div>
+                    <dt>1932</dt>
+                    <dd>Высшая школа профдвижения</dd>
+                  </div>
+                  <div>
+                    <dt>1936</dt>
+                    <dd>
+                      переход Школы из регионального подчинения в ведение ВЦСПС
+                    </dd>
+                  </div>
+                  <!-- <div>
+                              <dt>1944</dt>
+                              <dd>возобновление работы</dd>
+                            </div> -->
+                </dl>
+                <a class="chapter__all" href="chronicle.html#p1"
+                  >Все события 1926–1945 →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1" disabled>←</button>
+              <div class="dots" aria-hidden="true">
+                <i class="on"></i><i class=""></i><i class=""></i
+                ><i class=""></i><i class=""></i><i class=""></i>
+              </div>
+              <button type="button" data-dir="1">
+                <span class="nav-title"
+                  >Высшая Профсоюзная Школа Культуры · </span
+                >II →
+              </button>
+            </div>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-1"
+            aria-labelledby="tab-1"
+            hidden
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/g2-vyveska.jpg"
+                    data-cap="У входа в Высшую профсоюзную школу культуры, Красная ул., 22, 1970-е"
+                    aria-label="Открыть фото: У входа в Высшую профсоюзную школу культуры, Красная ул., 22, 1970-е"
+                  >
+                    <img
+                      src="img/g2-vyveska.jpg"
+                      alt="У входа в Высшую профсоюзную школу культуры, Красная ул., 22, 1970-е"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>
+                    У входа в Высшую профсоюзную школу культуры, Красная ул.,
+                    22, 1970-е
+                  </figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 4 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/photo_2026-10-13_11-48-40_1600_1108.jpg"
+                      data-cap="Выпуск культмассового факультета Ленинградской высшей школы профдвижения ВЦСПС, 1949–1952. В центре — директор Л.П. Чернявская"
+                      aria-label="Открыть фото: Выпуск культмассового факультета Ленинградской высшей школы профдвижения ВЦСПС, 1949–1952. В центре — директор Л.П. Чернявская"
+                    >
+                      <img
+                        src="img/photo_2026-10-13_11-48-40_1600_1108.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g2-bulvar.jpg"
+                      data-cap="Здание Школы на бульваре Профсоюзов, 1960"
+                      aria-label="Открыть фото: Здание Школы на бульваре Профсоюзов, 1960"
+                    >
+                      <img
+                        src="img/g2-bulvar.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g2-shakhmaty.jpg"
+                      data-cap="Шахматный турнир студентов, 1970-е"
+                      aria-label="Открыть фото: Шахматный турнир студентов, 1970-е"
+                    >
+                      <img
+                        src="img/g2-shakhmaty.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g2-kafedra.jpg"
+                      data-cap="Заседание кафедры, 1970-е"
+                      aria-label="Открыть фото: Заседание кафедры, 1970-е"
+                    >
+                      <img src="img/g2-kafedra.jpg" alt="" loading="lazy" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no"><b>II</b><span>1945 — 1990</span></div>
+                <h3 class="h3">Высшая Профсоюзная Школа Культуры</h3>
+                <p class="chapter__body is-clamped" id="chb-1">
+                  Первые послевоенные годы были голодными: 90 продовольственных
+                  карточек на 250 человек и занятия на недостроенном пятом этаже
+                  на бульваре Профсоюзов. Но в Школу пришли блестящие
+                  ленинградские учёные — историк С.Б. Окунь, искусствовед
+                  Н.Н. Пунин, филолог А.В. Десницкий. В 1947 году появилось
+                  Студенческое научное общество, а в 1948-м Школа стала высшим
+                  учебным заведением. Её самодеятельность считалась лучшей среди
+                  ленинградских вузов. В 1950-е вуз возглавила Клавдия
+                  Домокурова — в годы войны руководитель партизанского движения
+                  Ленинградской области. В 1968 году Школа стала Высшей
+                  профсоюзной школой культуры. К концу 1970-х она готовила кадры
+                  для дворцов культуры, здравниц и турбаз всего СССР. Около
+                  четверти студентов приезжали из других стран — от Германии и
+                  Болгарии до Монголии, Вьетнама и Лаоса.
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-1"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates">
+                  <div>
+                    <dt>1948</dt>
+                    <dd>статус высшего учебного заведения</dd>
+                  </div>
+                  <div>
+                    <dt>1966</dt>
+                    <dd>орден «Знак Почёта»</dd>
+                  </div>
+                  <div>
+                    <dt>1968</dt>
+                    <dd>Высшая профсоюзная школа культуры</dd>
+                  </div>
+                </dl>
+                <a class="chapter__all" href="chronicle.html#p2"
+                  >Все события 1945–1990 →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1">
+                ← I<span class="nav-title"> · Из рабочих кружков — в вуз</span>
+              </button>
+              <div class="dots" aria-hidden="true">
+                <i class=""></i><i class="on"></i><i class=""></i
+                ><i class=""></i><i class=""></i><i class=""></i>
+              </div>
+              <button type="button" data-dir="1">
+                <span class="nav-title"
+                  >Уникальный университетский кампус · </span
+                >III →
+              </button>
+            </div>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-2"
+            aria-labelledby="tab-2"
+            hidden
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/ch3.jpg"
+                    data-cap="Строительство учебного корпуса на ул. Фучика"
+                    aria-label="Открыть фото: Строительство учебного корпуса на ул. Фучика"
+                  >
+                    <img
+                      src="img/ch3.jpg"
+                      alt="Строительство учебного корпуса на ул. Фучика"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>
+                    Строительство учебного корпуса на ул. Фучика
+                  </figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 5 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g3-genplan.jpg"
+                      data-cap="Генплан комплекса на ул. Фучика. Проект арх. Н.Н. Надёжина, Е.Д. Лохановой, О.В. Семеновой"
+                      aria-label="Открыть фото: Генплан комплекса на ул. Фучика. Проект арх. Н.Н. Надёжина, Е.Д. Лохановой, О.В. Семеновой"
+                    >
+                      <img
+                        src="img/g3-genplan.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g3-fasad.jpg"
+                      data-cap="Проект: главный фасад и Университетская площадь"
+                      aria-label="Открыть фото: Проект: главный фасад и Университетская площадь"
+                    >
+                      <img
+                        src="img/g3-fasad.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g3-tkz.jpg"
+                      data-cap="Проект: вход в театрально-концертный зал"
+                      aria-label="Открыть фото: Проект: вход в театрально-концертный зал"
+                    >
+                      <img src="img/g3-tkz.jpg" alt="" loading="lazy" /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g3-dvor.jpg"
+                      data-cap="Проект: внутренний двор с аркадой"
+                      aria-label="Открыть фото: Проект: внутренний двор с аркадой"
+                    >
+                      <img
+                        src="img/g3-dvor.jpg"
+                        alt=""
+                        loading="lazy"
+                      /></button
+                    ><button
+                      class="thumb"
+                      type="button"
+                      data-src="img/g3-vestibul.jpg"
+                      data-cap="Проект: парадный вестибюль"
+                      aria-label="Открыть фото: Проект: парадный вестибюль"
+                    >
+                      <img src="img/g3-vestibul.jpg" alt="" loading="lazy" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no">
+                  <b>III</b><span>1991 — 1999</span>
+                </div>
+                <h3 class="h3">Уникальный университетский кампус</h3>
+                <p class="chapter__body is-clamped" id="chb-2">
+                  Распад СССР оставил вуз без бюджетного финансирования. В 1991
+                  году коллектив выдвинул ректора из своей среды — доцента
+                  Александра Запесоцкого, и учебное заведение перешло на полное
+                  самофинансирование. Тогда же было достроено здание на улице
+                  Фучика: 50 тысяч квадратных метров, где под одной крышей
+                  разместились аудитории, библиотека, театральный зал, спортзалы
+                  и общежитие. Атмосфера свободного творческого поиска привлекла
+                  сюда лучших гуманитариев Ленинграда — философа М.С. Кагана,
+                  режиссёра З.Я. Корогодского, психолога Б.Д. Парыгина. За пять
+                  лет институт стал университетом, миновав ступень академии.
+                  Число докторов наук и профессоров выросло с 12 до 120,
+                  студентов дневного отделения — с 680 до 3000. В эти же годы в
+                  жизнь Университета вошли Дмитрий Лихачёв, Жорес Алфёров,
+                  Мстислав Ростропович, Кирилл Лавров, Даниил Гранин и другие
+                  знаменитые современники.
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-2"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates">
+                  <div>
+                    <dt>1991</dt>
+                    <dd>24 мая — статус Университета</dd>
+                  </div>
+                  <div>
+                    <dt>1993</dt>
+                    <dd>Д.С. Лихачёв — первый Почётный доктор</dd>
+                  </div>
+                  <div>
+                    <dt>1995</dt>
+                    <dd>разработка «Декларации прав культуры»</dd>
+                  </div>
+                </dl>
+                <a class="chapter__all" href="chronicle.html#p3"
+                  >Все события 1991–1999 →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1">
+                ← II<span class="nav-title">
+                  · Высшая Профсоюзная Школа Культуры</span
+                >
+              </button>
+              <div class="dots" aria-hidden="true">
+                <i class=""></i><i class=""></i><i class="on"></i
+                ><i class=""></i><i class=""></i><i class=""></i>
+              </div>
+              <button type="button" data-dir="1">
+                <span class="nav-title">Универсум культуры · </span>IV →
+              </button>
+            </div>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-3"
+            aria-labelledby="tab-3"
+            hidden
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/ch4.jpg"
+                    data-cap="Визит Президента России В.В. Путина в Университет"
+                    aria-label="Открыть фото: Визит Президента России В.В. Путина в Университет"
+                  >
+                    <img
+                      src="img/ch4.jpg"
+                      alt="Визит Президента России В.В. Путина в Университет"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>
+                    Визит Президента России В.В. Путина в Университет
+                  </figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 4 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/2006-год,-80-лет-СПбГУП,-заседание-в-Таврическом-дворце.jpg"
+                      data-cap="2006 год, 80-лет СПбГУП, заседание в Таврическом дворце"
+                      aria-label="Открыть фото: 2006 год, 80-лет СПбГУП, заседание в Таврическом дворце"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/2006-год,-80-лет-СПбГУП,-заседание-в-Таврическом-дворце.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Молодежный-телеканал-СПбГУП,-2004.jpg"
+                      data-cap="Молодежный телеканал СПбГУП, 2004"
+                      aria-label="Открыть фото: Молодежный телеканал СПбГУП, 2004"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Молодежный-телеканал-СПбГУП,-2004.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Ужин-при-свечах-с-народным-артистом-СССР-Кобзоном-И.Д.jpg"
+                      data-cap="Ужин при свечах с народным артистом СССР Кобзоном И.Д."
+                      aria-label="Открыть фото: Ужин при свечах с народным артистом СССР Кобзоном И.Д."
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Ужин-при-свечах-с-народным-артистом-СССР-Кобзоном-И.Д.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Церемония-присвоения-имени-Д.А.jpg"
+                      data-cap="Церемония присвоения имени Д.А. Гранина Научной библиотеке, 2009 год"
+                      aria-label="Открыть фото: Церемония присвоения имени Д.А. Гранина Научной библиотеке, 2009 год"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Церемония-присвоения-имени-Д.А.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no"><b>IV</b><span>2000 — 2009</span></div>
+                <h3 class="h3">Универсум культуры</h3>
+                <p class="chapter__body is-clamped" id="chb-3">
+                  В новом веке ведущие учёные Университета предложили смотреть
+                  на университет шире, чем на универсум знаний, — как на
+                  универсум культуры, вобравший лучшее, что создало
+                  человечество. Российская академия образования изучила модель
+                  СПбГУП и в 2005 году назвала её «перспективнейшей для России
+                  XXI века». «Дни науки», начатые Д.С. Лихачёвым, после
+                  обращения Д.А. Гранина и А.С. Запесоцкого к Президенту
+                  получили в 2001 году статус Международных Лихачёвских научных
+                  чтений. В 2008 году Университет посетил Владимир Путин. В том
+                  же году по предложению ФНПР здесь открылся первый в мире
+                  факультет конфликтологии. К этому времени Университет добился
+                  полного трудоустройства выпускников.
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-3"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates">
+                  <div>
+                    <dt>2001</dt>
+                    <dd>Международные Лихачёвские научные чтения</dd>
+                  </div>
+                  <div>
+                    <dt>2005</dt>
+                    <dd>
+                      модель СПбГУП признана РАО «перспективнейшей для России
+                      XXI века»
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>2007</dt>
+                    <dd>премия Правительства РФ в области образования</dd>
+                  </div>
+                  <div>
+                    <dt>2008</dt>
+                    <dd>открытие факультета конфликтологии</dd>
+                  </div>
+                </dl>
+                <a class="chapter__all" href="chronicle.html#p4"
+                  >Все события 2000–2009 →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1">
+                ← III<span class="nav-title">
+                  · Уникальный университетский кампус</span
+                >
+              </button>
+              <div class="dots" aria-hidden="true">
+                <i class=""></i><i class=""></i><i class=""></i
+                ><i class="on"></i><i class=""></i><i class=""></i>
+              </div>
+              <button type="button" data-dir="1">
+                <span class="nav-title"
+                  >Университет креативных индустрий · </span
+                >V →
+              </button>
+            </div>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-4"
+            aria-labelledby="tab-4"
+            hidden
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/День-факультета-искусств,2018.jpg"
+                    data-cap="День факультета искусств, 2018"
+                    aria-label="Открыть фото: «День факультета искусств, 2018"
+                  >
+                    <img
+                      src="img/День-факультета-искусств,2018.jpg"
+                      alt="День факультета искусств, 2018"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>День факультета искусств, 2018</figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 7 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Концерт-артистов-Филармонии,-2019-год.jpg"
+                      data-cap="Концерт артистов Филармонии, 2019 год"
+                      aria-label="Открыть фото: Концерт артистов Филармонии, 2019 год"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Концерт-артистов-Филармонии,-2019-год.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Студенты-в-научной-библиотеке-им.-Д.А.jpg"
+                      data-cap="Студенты в научной библиотеке им. Д.А. Гранина, 2022"
+                      aria-label="Открыть фото: Студенты в научной библиотеке им. Д.А. Гранина, 2022"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Студенты-в-научной-библиотеке-им.-Д.А.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/XVI-Городской-вечер-восточной-поэзии-в-ТКЗ-им.-А.П.jpg"
+                      data-cap="XVI Городской вечер восточной поэзии в ТКЗ им. А.П. Петрова СПбГУП, 2022"
+                      aria-label="Открыть фото: XVI Городской вечер восточной поэзии в ТКЗ им. А.П. Петрова СПбГУП, 2022"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/XVI-Городской-вечер-восточной-поэзии-в-ТКЗ-им.-А.П.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/День-первокурсника-в-Царском-селе,-2016.jpg"
+                      data-cap="День первокурсника в Царском селе, 2016"
+                      aria-label="Открыть фото: День первокурсника в Царском селе, 2016"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/День-первокурсника-в-Царском-селе,-2016.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Показ-спектакля-А-зори-здесь-тихие-студентов-4-курса-кафедры-режиссуры,-2025.jpg"
+                      data-cap="Показ спектакля А зори здесь тихие студентов 4 курса кафедры режиссуры, 2025"
+                      aria-label="Открыть фото: Показ спектакля А зори здесь тихие студентов 4 курса кафедры режиссуры, 2025"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Показ-спектакля-А-зори-здесь-тихие-студентов-4-курса-кафедры-режиссуры,-2025.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/90-летие-СПбГУП,-Таврический-дворец,-2016-год.jpg"
+                      data-cap="90-летие СПбГУП, Таврический дворец, 2016 год"
+                      aria-label="Открыть фото: 90-летие СПбГУП, Таврический дворец, 2016 год"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/90-летие-СПбГУП,-Таврический-дворец,-2016-год.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/День-знаний,-2018-год.jpg"
+                      data-cap="День знаний, 2018 год"
+                      aria-label="Открыть фото: День знаний, 2018 год"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/День-знаний,-2018-год.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no"><b>V</b><span>2010 — 2025</span></div>
+                <h3 class="h3">Университет креативных индустрий</h3>
+                <p class="chapter__body is-clamped" id="chb-4">
+                  Здесь впервые появились специальности «социально-культурная
+                  деятельность» и «режиссура мультимедиа». Выпускники уникальной
+                  кафедры звукорежиссуры работают на ведущих музыкальных
+                  площадках не только Санкт-Петербурга, но и страны. На
+                  факультете искусств преподают специалист мирового уровня в
+                  области акустики И.А. Алдошина и трижды номинант на «Оскар»
+                  аниматор К.Э. Бронзит, а студенты одерживают до 80 творческих
+                  побед в год. Издательство Университета выпустило более 1200
+                  книг, среди них пятитомник выступлений 118 академиков РАН в
+                  стенах СПбГУП. В 2019 году в приветствии к участникам XIX
+                  Международных Лихачёвских научных чтений Президент России
+                  назвал СПбГУП «прославленным».
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-4"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates">
+                  <div>
+                    <dt>2019</dt>
+                    <dd>
+                      СПбГУП получил высокую оценку Президента В.В. Путина
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>2022</dt>
+                    <dd>
+                      «Каталог книг» к 30-летию издательства: 1205 трудов, 5800
+                      авторов
+                    </dd>
+                  </div>
+                </dl>
+                <a class="chapter__all" href="chronicle.html#p5"
+                  >Все события 2010–2025 →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1">
+                ← IV<span class="nav-title"> · Универсум культуры</span>
+              </button>
+              <div class="dots" aria-hidden="true">
+                <i class=""></i><i class=""></i><i class=""></i><i class=""></i
+                ><i class="on"></i><i class=""></i>
+              </div>
+              <button type="button" data-dir="1">
+                <span class="nav-title">Вступая во второе столетие · </span>VI →
+              </button>
+            </div>
+          </div>
+          <div
+            class="chapter-wrap"
+            role="tabpanel"
+            id="ch-5"
+            aria-labelledby="tab-5"
+            hidden
+          >
+            <article class="chapter">
+              <div class="chapter__media">
+                <figure>
+                  <button
+                    class="pp pp--zoom"
+                    type="button"
+                    data-src="img/ch6.jpg"
+                    data-cap="Студенты Университета сегодня"
+                    aria-label="Открыть фото: Студенты Университета сегодня"
+                  >
+                    <img
+                      src="img/ch6.jpg"
+                      alt="Студенты Университета сегодня"
+                      loading="lazy"
+                    />
+                  </button>
+                  <figcaption>Студенты Университета сегодня</figcaption>
+                </figure>
+                <div class="gallery">
+                  <span class="cap cap--plain gallery__label"
+                    >Фотоархив · 5 фото</span
+                  >
+                  <div class="gallery__row">
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/XX-Юбилейный-Городской-вечер-восточной-поэзии-им.-Д.А.jpg"
+                      data-cap="XX Юбилейный Городской вечер восточной поэзии им. Д.А. Гранина, 2026"
+                      aria-label="Открыть фото: XX Юбилейный Городской вечер восточной поэзии им. Д.А. Гранина, 2026"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/XX-Юбилейный-Городской-вечер-восточной-поэзии-им.-Д.А.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Премьерный-показ-спектакля-выпускного-курса-кафедры-режиссуры-и-актерского-искусства-им.-З.Я.jpg"
+                      data-cap="Премьерный показ спектакля выпускного курса кафедры режиссуры и актерского искусства им. З.Я. Корогодского Королевство кривых зеркал, 2026"
+                      aria-label="Открыть фото: Премьерный показ спектакля выпускного курса кафедры режиссуры и актерского искусства им. З.Я. Корогодского Королевство кривых зеркал, 2026"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Премьерный-показ-спектакля-выпускного-курса-кафедры-режиссуры-и-актерского-искусства-им.-З.Я.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Спортивно-развлекательная-программа-Белые-ночи-по-случаю-окончания-учебного-года-на-площадке-гимназии-Ольгино-при-СПбГУП,-2026.jpg"
+                      data-cap="Спортивно-развлекательная программа Белые ночи по случаю окончания учебного года на площадке гимназии Ольгино при СПбГУП, 2026"
+                      aria-label="Открыть фото: Спортивно-развлекательная программа Белые ночи по случаю окончания учебного года на площадке гимназии Ольгино при СПбГУП, 2026"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Спортивно-развлекательная-программа-Белые-ночи-по-случаю-окончания-учебного-года-на-площадке-гимназии-Ольгино-при-СПбГУП,-2026.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Торжественная-церемония-вручения-дипломов-2026.jpg"
+                      data-cap="Торжественная церемония вручения дипломов о высшем образовании выпускникам очной формы получения образования (специалитет, магистратура), 2026"
+                      aria-label="Открыть фото: Торжественная церемония вручения дипломов о высшем образовании выпускникам очной формы получения образования (специалитет, магистратура), 2026"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Торжественная-церемония-вручения-дипломов-2026.jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                    <button
+                      class="thumb"
+                      type="button"
+                      data-src="img/Университетская-Юморсиада-«День-смеха-—-26».jpg"
+                      data-cap="Университетская Юморсиада «День смеха — 26»"
+                      aria-label="Открыть фото: Университетская Юморсиада «День смеха — 26»"
+                    >
+                      <img
+                        style="filter: inherit"
+                        src="img/Университетская-Юморсиада-«День-смеха-—-26».jpg"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chapter__text">
+                <div class="chapter__no"><b>VI</b><span>2026 →</span></div>
+                <h3 class="h3">Вступая во второе столетие</h3>
+                <p class="chapter__body is-clamped" id="chb-5">
+                  9 октября 2026 года Университету исполняется сто лет. Сегодня
+                  на одно бюджетное место претендуют в среднем 36 абитуриентов,
+                  а на отдельные специальности — до 232. Из 17 998 выпускников
+                  последних 15 лет без работы оказались лишь 14 человек. Они
+                  работают в различных областях культуры, искусства, экономики,
+                  права и др. Здание, построенное в 1990-е, стало образцом
+                  креативного кампуса. Международные Лихачёвские научные чтения
+                  собирают учёных из 59 стран, а следующую страницу этой истории
+                  напишут сегодняшние студенты.
+                </p>
+                <button
+                  class="more-link"
+                  type="button"
+                  aria-controls="chb-5"
+                  aria-expanded="false"
+                >
+                  Читать далее ↓
+                </button>
+                <dl class="keydates"></dl>
+                <a class="chapter__all" href="chronicle.html#p6"
+                  >События 2026 года →</a
+                >
+              </div>
+            </article>
+            <div class="chapter-nav">
+              <button type="button" data-dir="-1">
+                ← V<span class="nav-title">
+                  · Университет креативных индустрий</span
+                >
+              </button>
+              <div class="dots" aria-hidden="true">
+                <i class=""></i><i class=""></i><i class=""></i><i class=""></i
+                ><i class=""></i><i class="on"></i>
+              </div>
+              <button type="button" data-dir="1" disabled>→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--burgundy on-dark"
+        id="congrats"
+        aria-labelledby="congrats-title"
+      >
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">100 лет вместе</span>
+            <div class="head__text">
+              <h2 class="h2" id="congrats-title">
+                Поздравьте Университет со 100-летием
+              </h2>
+              <p class="lead">
+                Оставьте пожелание — лучшие поздравления выпускников, студентов
+                и партнёров появятся на стене юбилея.
+              </p>
+            </div>
+          </div>
+          <div class="congrats congrats--form">
+            <form
+              class="form"
+              id="congrats-form"
+              action="api/congrats.php"
+              method="post"
+              novalidate
+            >
+              <div class="field">
+                <label for="f-name">Имя *</label>
+                <input
+                  id="f-name"
+                  name="name"
+                  type="text"
+                  maxlength="120"
+                  placeholder="Как к вам обращаться"
+                  required
+                  autocomplete="name"
+                  aria-describedby="f-name-err"
+                />
+                <span class="field__err" id="f-name-err" hidden></span>
+              </div>
+              <div class="field">
+                <label for="f-email">E-mail *</label>
+                <input
+                  id="f-email"
+                  name="email"
+                  type="email"
+                  maxlength="254"
+                  placeholder="name@mail.ru"
+                  required
+                  autocomplete="email"
+                  aria-describedby="f-email-err f-note"
+                />
+                <span class="field__err" id="f-email-err" hidden></span>
+              </div>
+              <div class="field">
+                <label for="f-who">Кто вы</label>
+                <input
+                  id="f-who"
+                  name="who"
+                  type="text"
+                  maxlength="200"
+                  placeholder="Выпускник 20ХХ / студент / партнёр"
+                  autocomplete="off"
+                  aria-describedby="f-who-err"
+                />
+                <span class="field__err" id="f-who-err" hidden></span>
+              </div>
+              <div class="field">
+                <label for="f-text">Поздравление *</label>
+                <textarea
+                  id="f-text"
+                  name="text"
+                  rows="3"
+                  maxlength="10000"
+                  placeholder="Ваши слова Университету…"
+                  required
+                  aria-describedby="f-text-err f-text-hint"
+                ></textarea>
+                <span class="field__err" id="f-text-err" hidden></span>
+              </div>
+              <div class="form__trap" aria-hidden="true">
+                <label for="f-website">Оставьте это поле пустым</label>
+                <input
+                  id="f-website"
+                  name="website"
+                  type="text"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="field field--consent">
+                <label class="form__consent" for="f-consent">
+                  <input
+                    id="f-consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    aria-describedby="f-consent-err"
+                  />
+                  <span
+                    >Согласен(на) на публикацию моего имени, подписи и текста
+                    поздравления на стене юбилея. *</span
+                  >
+                </label>
+                <span class="field__err" id="f-consent-err" hidden></span>
+              </div>
+              <p class="form__note" id="f-note">
+                * — обязательные поля. E-mail нужен для связи и не публикуется.
+                Поздравления появятся на стене после проверки.
+              </p>
+              <div>
+                <button class="btn btn--white" type="submit" disabled>
+                  Отправить поздравление
+                </button>
+              </div>
+              <p
+                class="form__status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                hidden
+              ></p>
+              <noscript
+                ><p class="form__note">
+                  Для отправки из формы включите JavaScript или напишите на
+                  указанную почту.
+                </p></noscript
+              >
+            </form>
+            <figure class="congrats__photo">
+              <div class="pp pp--light">
+                <img
+                  src="img/wall.jpg"
+                  alt="День знаний на Университетской площади СПбГУП"
+                  loading="lazy"
+                />
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="cw" id="cw" data-source="data/congrats.json">
+          <div class="wrap cw__bar">
+            <span class="cap" id="wall-title">Стена поздравлений</span
+            ><button
+              class="cw__pause"
+              type="button"
+              aria-pressed="false"
+              aria-controls="cw-rows"
+            >
+              <i aria-hidden="true"></i><span>Пауза</span>
+            </button>
+          </div>
+          <div
+            class="cw__rows"
+            id="cw-rows"
+            role="region"
+            aria-labelledby="wall-title"
+          >
+            <div class="cw__row"><div class="cw__track"></div></div>
+            <div class="cw__row"><div class="cw__track"></div></div>
+          </div>
+          <div class="wrap cw__all">
+            <a class="btn btn--outline-light" href="congrats.html"
+              >Читать все поздравления →</a
+            >
+          </div>
+          <p class="wrap cw__message" role="status" hidden></p>
+          <noscript
+            ><p class="wrap cw__message">
+              Для просмотра стены поздравлений включите JavaScript.
+            </p></noscript
+          >
+        </div>
+        <dialog
+          class="cw-dialog"
+          id="cw-dialog"
+          aria-labelledby="cw-dialog-title"
+        >
+          <div class="cw-dialog__head">
+            <span class="cap" id="cw-dialog-title"
+              >Поздравление Университету</span
+            ><button
+              class="cw-dialog__close"
+              type="button"
+              aria-label="Закрыть"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="cw-dialog__body">
+            <blockquote>
+              <p class="cw-dialog__text"></p>
+              <footer>
+                <b class="cw-dialog__name"></b
+                ><span class="cw-dialog__who"></span>
+              </footer>
+            </blockquote>
+          </div>
+        </dialog>
+        <dialog
+          class="lt-viewer"
+          id="lt-viewer"
+          aria-label="Официальное поздравление"
+        >
+          <button class="lt-viewer__close" type="button" aria-label="Закрыть">
+            ✕
+          </button>
+          <div class="lt-viewer__paper"><img src="" alt="" /></div>
+          <div class="lt-viewer__cap">
+            <b class="lt-viewer__org"></b><span class="lt-viewer__who"></span
+            ><span class="lt-viewer__hint"
+              >Нажмите на лист, чтобы увеличить</span
+            >
+          </div>
+          <div class="lt-viewer__nav">
+            <button type="button" data-d="-1" aria-label="Предыдущее письмо">
+              ←</button
+            ><span class="lt-viewer__count"></span
+            ><button type="button" data-d="1" aria-label="Следующее письмо">
+              →
+            </button>
+          </div>
+        </dialog>
+      </section>
+      <section
+        class="section lt-section"
+        id="letters-section"
+        aria-labelledby="letters-title"
+        hidden
+      >
+        <div class="wrap">
+          <div class="lt" id="letters" data-source="data/letters.json">
+            <div class="lt__bar">
+              <span class="cap" id="letters-title"
+                >Официальные поздравления</span
+              ><span class="lt__arrows"
+                ><button
+                  class="lt__arrow"
+                  type="button"
+                  data-d="-1"
+                  aria-label="Предыдущие письма"
+                >
+                  ←</button
+                ><button
+                  class="lt__arrow"
+                  type="button"
+                  data-d="1"
+                  aria-label="Следующие письма"
+                >
+                  →
+                </button></span
+              >
+            </div>
+            <div
+              class="lt__strip"
+              role="list"
+              aria-labelledby="letters-title"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--tint"
+        id="people"
+        aria-labelledby="people-title"
+      >
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">Люди</span>
+            <div class="head__text">
+              <h2 class="h2" id="people-title">
+                Почётные доктора и профессора
+              </h2>
+              <p class="lead">
+                С 1993 года звание Почётного доктора СПбГУП присвоено 40
+                выдающимся учёным, государственным деятелям, деятелям науки,
+                культуры, искусства России и мира, с 1996 года 56 педагогов вуза
+                стали Почётными профессорами Университета.
+              </p>
+            </div>
+          </div>
+          <div class="people-tabs" role="tablist" aria-label="Почётные звания">
+            <button
+              class="ptab"
+              role="tab"
+              type="button"
+              id="ptab-doc"
+              aria-controls="ppanel-doc"
+              aria-selected="true"
+            >
+              Почётные доктора <span>40</span></button
+            ><button
+              class="ptab"
+              role="tab"
+              type="button"
+              id="ptab-prof"
+              aria-controls="ppanel-prof"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Почётные профессора <span>56</span>
+            </button>
+          </div>
+          <div
+            class="ppanel"
+            id="ppanel-doc"
+            role="tabpanel"
+            aria-labelledby="ptab-doc"
+          >
+            <div class="doctors" id="grid-doc">
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Дмитрий Лихачёв"
+                data-year="1993"
+                data-reg="Академик Российской академии наук, Почётный гражданин Санкт-Петербурга"
+                data-bio="Дмитрий Сергеевич Лихачёв (1906–1999) — выдающийся учёный, филолог, исследователь древнерусской литературы и культуры. Многие годы работал в Пушкинском Доме. Первый Почётный доктор СПбГУП: под его руководством создана «Декларация прав культуры», его имя носят Международные научные чтения Университета."
+                data-photo="img/doc-01.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-01.jpg"
+                    alt="Дмитрий Лихачёв"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1993</span><b>Дмитрий Лихачёв</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Джон Кингман"
+                data-year="1994"
+                data-reg="Доктор Бристольского университета"
+                data-bio="Сэр Джон Кингман (р. 1939) — выдающийся британский математик, специалист в области теории вероятностей. Возглавлял Бристольский университет, затем — Институт математических наук Исаака Ньютона в Кембридже."
+                data-photo="img/doc-02.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-02.jpg"
+                    alt="Джон Кингман"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1994</span><b>Джон Кингман</b
+                ><span>математик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Михаил Аникушин"
+                data-year="1994"
+                data-reg="Народный художник СССР, лауреат Ленинской премии, Герой Социалистического Труда, академик Российской академии художеств"
+                data-bio="Михаил Константинович Аникушин (1917–1997) — выдающийся скульптор, автор памятника А.С. Пушкину на площади Искусств и Монумента героическим защитникам Ленинграда на площади Победы в Петербурге."
+                data-photo="img/doc-03.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-03.jpg"
+                    alt="Михаил Аникушин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1994</span><b>Михаил Аникушин</b
+                ><span>скульптор</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Дональд Росс"
+                data-year="1994"
+                data-reg="Президент Линнского университета"
+                data-bio="Дональд Росс — американский организатор высшего образования, многие годы руководил университетом во Флориде (США)."
+                data-photo="img/doc-04.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-04.jpg"
+                    alt="Дональд Росс"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1994</span><b>Дональд Росс</b
+                ><span>президент университета</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Наталья Дудинская"
+                data-year="1995"
+                data-reg="Народная артистка СССР, лауреат Государственных премий СССР, профессор"
+                data-bio="Наталья Михайловна Дудинская (1912–2003) — выдающаяся прима-балерина Кировского (Мариинского) театра, ученица А.Я. Вагановой, впоследствии педагог-репетитор."
+                data-photo="img/doc-05.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-05.jpg"
+                    alt="Наталья Дудинская"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1995</span><b>Наталья Дудинская</b
+                ><span>прима-балерина</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Андрей Петров"
+                data-year="1996"
+                data-reg="Народный артист СССР, лауреат Государственных премий СССР и РФ, Почётный гражданин Санкт-Петербурга"
+                data-bio="Андрей Павлович Петров (1930–2006) — выдающийся композитор, автор музыки к фильмам «Я шагаю по Москве», «Берегись автомобиля», «Служебный роман» и др."
+                data-photo="img/doc-06.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-06.jpg"
+                    alt="Андрей Петров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Андрей Петров</b
+                ><span>композитор</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Георгий Свиридов"
+                data-year="1996"
+                data-reg="Народный артист СССР, лауреат Ленинской и Государственных премий СССР, Герой Социалистического Труда"
+                data-bio="Георгий Васильевич Свиридов (1915–1998) — выдающийся композитор, автор «Поэмы памяти Сергея Есенина», музыкальных иллюстраций к повести А.С. Пушкина «Метель» и сюиты «Время, вперёд!» и др."
+                data-photo="img/doc-07.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-07.jpg"
+                    alt="Георгий Свиридов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Георгий Свиридов</b
+                ><span>композитор</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Даниил Гранин"
+                data-year="1997"
+                data-reg="Лауреат Государственной премии СССР, Герой Социалистического Труда, Почётный гражданин Санкт-Петербурга"
+                data-bio="Даниил Александрович Гранин (1919–2017) — выдающийся писатель, участник Великой Отечественной войны, автор романов «Иду на грозу», «Зубр» и «Блокадной книги» (с А. Адамовичем) и др. Его имя носит Научная библиотека СПбГУП."
+                data-photo="img/doc-08.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-08.jpg"
+                    alt="Даниил Гранин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1997</span><b>Даниил Гранин</b
+                ><span>писатель</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Мстислав Ростропович"
+                data-year="1998"
+                data-reg="Народный артист СССР, лауреат Ленинской премии и Государственных премий СССР и РСФСР"
+                data-bio="Мстислав Леопольдович Ростропович (1927–2007) — всемирно известный виолончелист и дирижёр, общественный деятель."
+                data-photo="img/doc-09.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-09.jpg"
+                    alt="Мстислав Ростропович"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1998</span><b>Мстислав Ростропович</b
+                ><span>музыкант</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Жорес Алфёров"
+                data-year="1998"
+                data-reg="Академик, вице-президент РАН, Почётный гражданин Санкт-Петербурга"
+                data-bio="Жорес Иванович Алфёров (1930–2019) — выдающийся учёный, лауреат Нобелевской премии по физике 2000 года за исследования полупроводниковых гетероструктур."
+                data-photo="img/doc-10.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-10.jpg"
+                    alt="Жорес Алфёров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1998</span><b>Жорес Алфёров</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Андрей Вознесенский"
+                data-year="1998"
+                data-reg="Лауреат Государственной премии СССР"
+                data-bio="Андрей Андреевич Вознесенский (1933–2010) — поэт, одна из главных фигур поэзии «шестидесятников», автор либретто рок-оперы «„Юнона“ и „Авось“» и др."
+                data-photo="img/doc-11.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-11.jpg"
+                    alt="Андрей Вознесенский"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1998</span><b>Андрей Вознесенский</b
+                ><span>поэт</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Кирилл Лавров"
+                data-year="1999"
+                data-reg="Народный артист СССР, Герой Социалистического Труда, Почётный гражданин Санкт-Петербурга"
+                data-bio="Кирилл Юрьевич Лавров (1925–2007) — выдающийся актёр театра и кино, с 1989 года — художественный руководитель БДТ им. Г.А. Товстоногова. Сыграл в фильмах «Живые и мёртвые», «Братья Карамазовы» и др."
+                data-photo="img/doc-12.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-12.jpg"
+                    alt="Кирилл Лавров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1999</span><b>Кирилл Лавров</b
+                ><span>актёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Эльдар Рязанов"
+                data-year="2000"
+                data-reg="Народный артист СССР и РФ, лауреат Государственных премий СССР и РСФСР"
+                data-bio="Эльдар Александрович Рязанов (1927–2015) — выдающийся кинорежиссёр и сценарист, автор фильмов «Карнавальная ночь», «Ирония судьбы, или С лёгким паром!», «Служебный роман», «Гараж» и др."
+                data-photo="img/doc-13.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-13.jpg"
+                    alt="Эльдар Рязанов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2000</span><b>Эльдар Рязанов</b
+                ><span>кинорежиссёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Валентин Янин"
+                data-year="2001"
+                data-reg="Академик РАН, заведующий кафедрой археологии МГУ им. М.В. Ломоносова"
+                data-bio="Валентин Лаврентьевич Янин (1929–2020) — выдающийся историк и археолог, многолетний руководитель Новгородской археологической экспедиции, исследователь берестяных грамот."
+                data-photo="img/doc-14.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-14.jpg"
+                    alt="Валентин Янин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2001</span><b>Валентин Янин</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Юрий Темирканов"
+                data-year="2003"
+                data-reg="Художественный руководитель Санкт-Петербургской филармонии им. Д.Д. Шостаковича, Народный артист СССР"
+                data-bio="Юрий Хатуевич Темирканов (1938–2023) — выдающийся дирижёр, в 1976–1988 годах возглавлял Кировский (Мариинский) театр, с 1988 года — Академический симфонический оркестр Санкт-Петербургской филармонии."
+                data-photo="img/doc-15.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-15.jpg"
+                    alt="Юрий Темирканов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2003</span><b>Юрий Темирканов</b
+                ><span>дирижёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Борис Эйфман"
+                data-year="2004"
+                data-reg="Художественный руководитель — директор Санкт-Петербургского академического театра балета, Народный артист России"
+                data-bio="Борис Яковлевич Эйфман (р. 1946) — выдающийся хореограф, основатель театра балета, известного во всём мире."
+                data-photo="img/doc-16.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-16.jpg"
+                    alt="Борис Эйфман"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2004</span><b>Борис Эйфман</b
+                ><span>хореограф</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Михаил Бобров"
+                data-year="2005"
+                data-reg="Почётный заведующий кафедрой физического воспитания, заслуженный работник физической культуры РФ, Почётный гражданин Санкт-Петербурга"
+                data-bio="Михаил Михайлович Бобров (1923–2018) — альпинист, участник обороны Ленинграда: в блокаду маскировал шпили и купола города."
+                data-photo="img/professors_new/M-M-Bobrov.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/M-M-Bobrov.jpg"
+                    alt="Михаил Бобров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2005</span><b>Михаил Бобров</b
+                ><span>профессор</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Николай Платэ"
+                data-year="2005"
+                data-reg="Академик РАН, лауреат Государственных премий СССР и РФ, доктор химических наук, профессор"
+                data-bio="Николай Альфредович Платэ (1934–2007) — выдающийся химик, специалист в области высокомолекулярных соединений."
+                data-photo="img/doc-18.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-18.jpg"
+                    alt="Николай Платэ"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2005</span><b>Николай Платэ</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Наталья Бехтерева"
+                data-year="2006"
+                data-reg="Академик РАН и РАМН, лауреат Государственной премии СССР"
+                data-bio="Наталья Петровна Бехтерева (1924–2008) — выдающийся нейрофизиолог, исследователь мозга человека, научный руководитель Института мозга человека РАН."
+                data-photo="img/doc-19.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-19.jpg"
+                    alt="Наталья Бехтерева"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2006</span><b>Наталья Бехтерева</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Лев Додин"
+                data-year="2006"
+                data-reg="Художественный руководитель Академического Малого драматического театра — Театра Европы, Народный артист России"
+                data-bio="Лев Абрамович Додин (р. 1944) — выдающийся театральный режиссёр, постановщик спектаклей «Братья и сёстры», «Бесы» и др."
+                data-photo="img/doc-20.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-20.jpg"
+                    alt="Лев Додин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2006</span><b>Лев Додин</b
+                ><span>режиссёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Александр Чубарьян"
+                data-year="2007"
+                data-reg="Директор Института всеобщей истории РАН, академик РАН, доктор исторических наук, профессор"
+                data-bio="Александр Оганович Чубарьян (р. 1931) — выдающийся историк, впоследствии — научный руководитель Института всеобщей истории РАН."
+                data-photo="img/doc-21.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-21.jpg"
+                    alt="Александр Чубарьян"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2007</span><b>Александр Чубарьян</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Альберт Лиханов"
+                data-year="2007"
+                data-reg="Председатель Российского детского фонда, действительный член Российской академии образования"
+                data-bio="Альберт Анатольевич Лиханов (1935–2021) — выдающийся писатель, автор книг для детей и юношества, основатель Российского детского фонда."
+                data-photo="img/doc-22.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-22.jpg"
+                    alt="Альберт Лиханов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2007</span><b>Альберт Лиханов</b
+                ><span>писатель</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Абдусалам Гусейнов"
+                data-year="2008"
+                data-reg="Директор Института философии РАН, академик РАН, доктор философских наук, профессор"
+                data-bio="Абдусалам Абдулкеримович Гусейнов (р. 1939) — выдающийся философ, специалист в области этики."
+                data-photo="img/doc-23.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-23.jpg"
+                    alt="Абдусалам Гусейнов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2008</span><b>Абдусалам Гусейнов</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Александр Некипелов"
+                data-year="2009"
+                data-reg="Вице-президент Российской академии наук, академик РАН, доктор экономических наук, профессор"
+                data-bio="Александр Дмитриевич Некипелов (р. 1951) — выдающийся экономист."
+                data-photo="img/doc-24.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-24.jpg"
+                    alt="Александр Некипелов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2009</span><b>Александр Некипелов</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Олег Басилашвили"
+                data-year="2010"
+                data-reg="Народный артист СССР, артист БДТ им. Г.А. Товстоногова, Почётный гражданин Санкт-Петербурга"
+                data-bio="Олег Валерианович Басилашвили (р. 1934) — выдающийся актёр театра и кино, сыграл в фильмах «Осенний марафон», «Служебный роман», «Вокзал для двоих» и др."
+                data-photo="img/doc-25.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-25.jpg"
+                    alt="Олег Басилашвили"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2010</span><b>Олег Басилашвили</b
+                ><span>актёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Мигель Анхель Моратинос"
+                data-year="2011"
+                data-reg="Экс-министр иностранных дел Королевства Испания"
+                data-bio="Мигель Анхель Моратинос (р. 1951) — испанский дипломат, министр иностранных дел Испании в 2004–2010 годах, впоследствии заместитель Генерального секретаря ООН. Преподавал студентам СПбГУП."
+                data-photo="img/doc-26.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-26.jpg"
+                    alt="Мигель Анхель Моратинос"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2011</span><b>Мигель Анхель Моратинос</b
+                ><span>дипломат</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Гадис Гаджиев"
+                data-year="2011"
+                data-reg="Судья Конституционного Суда РФ, заслуженный юрист РФ, доктор юридических наук, профессор"
+                data-bio="Гадис Абдуллаевич Гаджиев (р. 1953) — выдающийся правовед, доктор юридических наук."
+                data-photo="img/doc-27.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-27.jpg"
+                    alt="Гадис Гаджиев"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2011</span><b>Гадис Гаджиев</b
+                ><span>юрист</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Вячеслав Стёпин"
+                data-year="2011"
+                data-reg="Научный руководитель Института философии РАН, академик РАН, доктор философских наук, профессор"
+                data-bio="Вячеслав Семёнович Стёпин (1934–2018) — выдающийся философ, специалист в области философии науки, в 1988–2006 годах — директор Института философии РАН."
+                data-photo="img/doc-28.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-28.jpg"
+                    alt="Вячеслав Стёпин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2011</span><b>Вячеслав Стёпин</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Генри Резник"
+                data-year="2012"
+                data-reg="Президент Адвокатской палаты г. Москвы, кандидат юридических наук, заслуженный юрист России"
+                data-bio="Генри Маркович Резник (р. 1938) — один из самых известных российских адвокатов."
+                data-photo="img/doc-29.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-29.jpg"
+                    alt="Генри Резник"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2012</span><b>Генри Резник</b
+                ><span>адвокат</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Майкл Кентский"
+                data-year="2012"
+                data-reg="Его Королевское Высочество принц Майкл Кентский (Великобритания)"
+                data-bio="Принц Майкл Кентский (р. 1942) — член британской королевской семьи, двоюродный брат королевы Елизаветы II, известен интересом к России и поддержкой российско-британских культурных связей."
+                data-photo="img/doc-30.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-30.jpg"
+                    alt="Майкл Кентский"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2012</span><b>Майкл Кентский</b
+                ><span>принц</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Тимоти О’Ши"
+                data-year="2013"
+                data-reg="Вице-канцлер Эдинбургского университета, профессор"
+                data-bio="Сэр Тимоти О’Ши (р. 1949) — учёный в области информатики и образовательных технологий, в 2002–2018 годах возглавлял Эдинбургский университет."
+                data-photo="img/doc-31.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-31.jpg"
+                    alt="Тимоти О’Ши"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2013</span><b>Тимоти О’Ши</b
+                ><span>ректор университета</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Валерий Черешнев"
+                data-year="2014"
+                data-reg="Академик РАН, доктор медицинских наук, профессор, директор Института иммунологии и физиологии УрО РАН"
+                data-bio="Валерий Александрович Черешнев (р. 1944) — выдающийся иммунолог и физиолог, депутат Государственной Думы."
+                data-photo="img/doc-32.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-32.jpg"
+                    alt="Валерий Черешнев"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2014</span><b>Валерий Черешнев</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Ирина Роднина"
+                data-year="2015"
+                data-reg="Легендарная советская фигуристка, российский общественный и государственный деятель, депутат Государственной Думы"
+                data-bio="Ирина Константиновна Роднина (р. 1949) — трёхкратная олимпийская чемпионка и десятикратная чемпионка мира в парном катании."
+                data-photo="img/doc-33.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-33.jpg"
+                    alt="Ирина Роднина"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2015</span><b>Ирина Роднина</b
+                ><span>олимпийская чемпионка</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Владислав Третьяк"
+                data-year="2015"
+                data-reg="Трёхкратный олимпийский чемпион, 10-кратный чемпион мира, 9-кратный чемпион Европы, 13-кратный чемпион СССР"
+                data-bio="Владислав Александрович Третьяк (р. 1952) — легендарный хоккейный вратарь, в 1972 году стал самым молодым олимпийским чемпионом в истории хоккея; президент Федерации хоккея России."
+                data-photo="img/doc-34.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-34.jpg"
+                    alt="Владислав Третьяк"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2015</span><b>Владислав Третьяк</b
+                ><span>олимпийский чемпион</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Герцогиня Аберкорнская"
+                data-year="2016"
+                data-reg="Почётный консул России в Белфасте, прямой потомок императора Николая I и Александра Пушкина"
+                data-bio="Александра Анастасия, герцогиня Аберкорнская (р. 1946) — основательница Пушкинского фонда в Северной Ирландии."
+                data-photo="img/doc-35.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-35.jpg"
+                    alt="Герцогиня Аберкорнская"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2016</span><b>Герцогиня Аберкорнская</b
+                ><span>общественный деятель</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Пётр Толочко"
+                data-year="2016"
+                data-reg="Академик Национальной академии наук Украины, директор Института археологии, доктор исторических наук, профессор"
+                data-bio="Пётр Петрович Толочко (р. 1938) — выдающийся историк и археолог, исследователь Древней Руси."
+                data-photo="img/doc-36.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-36.jpg"
+                    alt="Пётр Толочко"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2016</span><b>Пётр Толочко</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Станислав Говорухин"
+                data-year="2017"
+                data-reg="Народный артист России"
+                data-bio="Станислав Сергеевич Говорухин (1936–2018) — выдающийся кинорежиссёр, сценарист и актёр, автор фильмов «Место встречи изменить нельзя», «Ворошиловский стрелок» и др.; депутат Государственной Думы."
+                data-photo="img/doc-37.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-37.jpg"
+                    alt="Станислав Говорухин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2017</span><b>Станислав Говорухин</b
+                ><span>кинорежиссёр</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Иосиф Кобзон"
+                data-year="2018"
+                data-reg="Народный артист СССР и РФ"
+                data-bio="Иосиф Давыдович Кобзон (1937–2018) — выдающийся певец, общественный и государственный деятель, депутат Государственной Думы."
+                data-photo="img/doc-38.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-38.jpg"
+                    alt="Иосиф Кобзон"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2018</span><b>Иосиф Кобзон</b
+                ><span>певец</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Талия Хабриева"
+                data-year="2018"
+                data-reg="Академик РАН, директор Института законодательства и сравнительного правоведения при Правительстве РФ, заслуженный юрист РФ"
+                data-bio="Талия Ярулловна Хабриева (р. 1958) — выдающийся правовед, вице-президент Российской академии наук."
+                data-photo="img/doc-39.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-39.jpg"
+                    alt="Талия Хабриева"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2018</span><b>Талия Хабриева</b
+                ><span>академик</span>
+              </button>
+              <button
+                class="doctor"
+                type="button"
+                data-kind="Почётный доктор СПбГУП"
+                data-name="Михаил Пиотровский"
+                data-year="2019"
+                data-reg="Академик РАН, член Президиума РАН, президент Союза музеев России, директор Государственного Эрмитажа"
+                data-bio="Михаил Борисович Пиотровский (р. 1944) — выдающийся востоковед, с 1992 года возглавляет Государственный Эрмитаж, президент Союза музеев России."
+                data-photo="img/doc-40.jpg"
+                aria-haspopup="dialog"
+              >
+                <span class="portrait"
+                  ><img
+                    src="img/doc-40.jpg"
+                    alt="Михаил Пиотровский"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2019</span><b>Михаил Пиотровский</b
+                ><span>академик</span>
+              </button>
+            </div>
+            <div class="more">
+              <button
+                class="btn btn--outline doctors-more"
+                type="button"
+                aria-controls="grid-doc"
+                aria-expanded="false"
+              >
+                Все почётные доктора — 40 ↓
+              </button>
+            </div>
+          </div>
+          <div
+            class="ppanel"
+            id="ppanel-prof"
+            role="tabpanel"
+            aria-labelledby="ptab-prof"
+            hidden
+          >
+            <div class="doctors" id="grid-prof">
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/M-M-Bobrov.jpg"
+                    alt="Михаил Михайлович Бобров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Михаил Михайлович Бобров</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Glushchenko_1.jpg"
+                    alt="Петр Петрович Глущенко "
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Петр Петрович Глущенко</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/R-B-Gromadskiy.jpg"
+                    alt="Роман Борисович Громадский"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Роман Борисович Громадский</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Gromov.jpg"
+                    alt="Юрий Иосифович Громов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Юрий Иосифович Громов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/dementeva_1.jpg"
+                    alt="Татьяна Борисовна Дементьева"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Татьяна Борисовна Дементьева</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/V-G.jpg"
+                    alt="Владимир Георгиевич Иванов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Владимир Георгиевич Иванов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Korogodskiy.jpg"
+                    alt="Зиновий Яковлевич Корогодский"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span
+                ><b>Зиновий Яковлевич Корогодский</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Leyberov.jpg"
+                    alt="Игорь Павлович Лейберов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Игорь Павлович Лейберов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/V-I.jpg"
+                    alt="Виктор Иванович Носач"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Виктор Иванович Носач</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Parygin_1.jpg"
+                    alt="Борис Дмитриевич Парыгин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Борис Дмитриевич Парыгин</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Petrova.jpg"
+                    alt="Оксема Федоровна Петрова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Оксема Федоровна Петрова</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Sankin-1.jpg"
+                    alt="Лев Абрамович Санкин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Лев Абрамович Санкин</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Sapogov.jpg"
+                    alt="Анатолий Александрович Сапогов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span
+                ><b>Анатолий Александрович Сапогов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Sokolov_1.jpg"
+                    alt="Аркадий Васильевич Соколов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span
+                ><b>Аркадий Васильевич Соколов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Tarkhanov.jpg"
+                    alt="Иван Ефимович Тарханов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Иван Ефимович Тарханов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Triodin-1.jpg"
+                    alt="Владимир Евгеньевич Триодин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span><b>Владимир Евгеньевич Триодин</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Filatova.jpg"
+                    alt="Александра Ильинична Филатова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1996</span
+                ><b>Александра Ильинична Филатова</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Zyabkin_1.jpg"
+                    alt="Алексей Иванович Зябкин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1997</span
+                ><b>Алексей Иванович Зябкин </b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Tarasova.jpg"
+                    alt="Наталья Борисовна Тарасова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1997</span><b>Наталья Борисовна Тарасова</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Prazdnikov-G.jpg"
+                    alt="Георгий Александрович Праздников"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1998</span
+                ><b>Георгий Александрович Праздников</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Tonkonogaya.jpg"
+                    alt="Евгения Павловна Тонконогая"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1998</span><b>Евгения Павловна Тонконогая</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Shmakov.jpg"
+                    alt="Михаил Викторович Шмаков"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">1999</span><b>Михаил Викторович Шмаков</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Birzhenyuk.jpg"
+                    alt="Григорий Михайлович Бирженюк"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2000</span
+                ><b>Григорий Михайлович Бирженюк</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Lukichev_1.jpg"
+                    alt="Юрий Александрович Лукичев"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2000</span
+                ><b>Юрий Александрович Лукичев</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/prof-19.jpg"
+                    alt="Александр Сергеевич Запесоцкий"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2001</span
+                ><b>Александр Сергеевич Запесоцкий</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Sydoruk.jpg"
+                    alt="Иван Иванович Сыдорук"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2001</span><b>Иван Иванович Сыдорук</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Sautov-I.jpg"
+                    alt="Иван Петрович Саутов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2001</span><b>Иван Петрович Саутов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Makarov-E.jpg"
+                    alt="Евгений Иванович Макаров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2001</span><b>Евгений Иванович Макаров</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                  src="img/professors_new/Markov.jpg"
+                    alt="Александр Петрович Марков"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2002</span><b>Александр Петрович Марков</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                  src="img/professors_new/Belozerov_1.jpg"
+                    alt="Борис Петрович Белозеров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2003</span><b>Борис Петрович Белозеров</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                  src="img/professors_new/Lukyanov_1.jpg"
+                    alt="Вячеслав Георгиевич Лукьянов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2003</span><b>Вячеслав Георгиевич Лукьянов</b>
+              </div>
+              <a class="doctor doctor--static doctor--link" href="staff.html#katysheva" aria-label="Дженни Николаевна Катышева — биография">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Katysheva-DN-1.jpg"
+                    alt="Дженни Николаевна Катышева"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2004</span><b>Дженни Николаевна Катышева</b>
+              </a>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/falaleev.jpg"
+                    alt="Анатолий Григорьевич Фалалеев"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2004</span
+                ><b>Анатолий Григорьевич Фалалеев</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                ><img
+                src="img/professors_new/Dvorko.jpg"
+                alt="Нина Ивановна Дворко "
+                loading="lazy"
+                width="360"
+                height="450" /></span
+                ><span class="cap">2005</span><b>Нина Ивановна Дворко </b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                ><img
+                src="img/professors_new/Shor.jpg"
+                alt="Юрий Матвеевич Шор"
+                loading="lazy"
+                width="360"
+                height="450" /></span
+                ><span class="cap">2005</span><b>Юрий Матвеевич Шор</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                ><img
+                src="img/professors_new/Derbin.jpg"
+                alt="Владимир Георгиевич Дербин"
+                loading="lazy"
+                width="360"
+                height="450" /></span
+                ><span class="cap">2006</span><b>Владимир Георгиевич Дербин</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                ><img
+                src="img/professors_new/Zobnin.jpg"
+                alt="Юрий Владимирович Зобнин"
+                loading="lazy"
+                width="360"
+                height="450" /></span
+                ><span class="cap">2006</span><b>Юрий Владимирович Зобнин</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Shekhter.jpg"
+                    alt="Татьяна Ефимовна Шехтер"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2006</span><b>Татьяна Ефимовна Шехтер</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Solovev.jpg"
+                    alt="Анатолий Сергеевич Соловьев"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2007</span><b>Анатолий Сергеевич Соловьев</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Motyshina.jpg"
+                    alt="Марина Станиславовна Мотышина"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2007</span><b>Марина Станиславовна Мотышина</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Aldoshina.jpg"
+                    alt="Ирина Аркадьевна Алдошина"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2008</span><b>Ирина Аркадьевна Алдошина</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Stremoukhov_1.jpg"
+                    alt="Алексей Васильевич Стремоухов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2008</span
+                ><b>Алексей Васильевич Стремоухов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Bolshakov.jpg"
+                    alt="Александр Сергеевич Большаков"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2009</span
+                ><b>Александр Сергеевич Большаков</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Oskolkov.jpg"
+                    alt="Сергей Александрович Осколков"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2009</span
+                ><b>Сергей Александрович Осколков</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Soshnikov.jpg"
+                    alt="Валентин Дмитриевич Сошников"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2010</span
+                ><b>Валентин Дмитриевич Сошников</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Uspenskaya.jpg"
+                    alt="Анна Викторовна Успенская"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2013</span><b>Анна Викторовна Успенская</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Yastrebov.jpg"
+                    alt="Юрий Григорьевич Ястребов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2013</span><b>Юрий Григорьевич Ястребов</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Kaysarov.jpg"
+                    alt="Евгений Александрович Кайсаров"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2015</span
+                ><b>Евгений Александрович Кайсаров</b>
+              </div>
+              <a class="doctor doctor--static doctor--link" href="staff.html#feygin" aria-label="Григорий Феликсович Фейгин — биография">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Feygin.jpg"
+                    alt="Григорий Феликсович Фейгин"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2015</span><b>Григорий Феликсович Фейгин</b>
+              </a>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Asoyan.jpg"
+                    alt="Арам Айкович Асоян"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2016</span><b>Арам Айкович Асоян</b>
+              </div>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Paseshnikova.jpg"
+                    alt="Лариса Алексеевна Пасешникова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2017</span
+                ><b>Лариса Алексеевна Пасешникова</b>
+              </div>
+              <a class="doctor doctor--static doctor--link" href="staff.html#solomonova" aria-label="Наталья Алексеевна Соломонова — биография">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/solomonova.jpg"
+                    alt="Наталья Алексеевна Соломонова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2018</span
+                ><b>Наталья Алексеевна Соломонова</b>
+              </a>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Legenkova-E-A.jpg"
+                    alt="Елизавета Александровна Легенькова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2023</span
+                ><b>Елизавета Александровна Легенькова</b>
+              </div>
+              <a class="doctor doctor--static doctor--link" href="staff.html#romashov" aria-label="Роман Анатольевич Ромашов — биография">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Romashov.jpg"
+                    alt="Роман Анатольевич Ромашов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2024</span><b>Роман Анатольевич Ромашов</b>
+              </a>
+              <div class="doctor doctor--static">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Petukhov.jpg"
+                    alt="Вениамин Григорьевич Петухов"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2025</span
+                ><b>Вениамин Григорьевич Петухов</b>
+              </div>
+              <a class="doctor doctor--static doctor--link" href="staff.html#morozova" aria-label="Елена Яковлевна Морозова — биография">
+                <span class="portrait"
+                  ><img
+                    src="img/professors_new/Morozova.jpg"
+                    alt="Елена Яковлевна Морозова"
+                    loading="lazy"
+                    width="360"
+                    height="450" /></span
+                ><span class="cap">2025</span><b>Елена Яковлевна Морозова</b>
+              </a>
+            </div>
+            <div class="more">
+              <button
+                class="btn btn--outline doctors-more"
+                type="button"
+                aria-controls="grid-prof"
+                aria-expanded="false"
+              >
+                Все почётные профессора — 56 ↓
+              </button>
+            </div>
+          </div>
+          <div class="staff" id="staff" lang="ru">
+            <div class="head staff__head">
+              <span class="cap" aria-hidden="true"></span>
+              <div class="head__text">
+                <h2 class="h2" id="staff-title">Заведующие кафедрами и <span class="staff__nw">профессорско-преподавательский состав</span></h2>
+                <p class="lead">Учёные и педагоги, которые сегодня определяют научные школы Университета и учат студентов профессии.</p>
+              </div>
+            </div>
+            <div id="staff-app" data-source="data/staff.json" data-page="staff.html"></div>
+          </div>
+        </div>
+      </section>
+      <dialog class="dialog" id="doctor-dialog" aria-labelledby="dlg-name">
+        <button class="dialog__close" type="button" aria-label="Закрыть">
+          ✕
+        </button>
+        <div class="dialog__in">
+          <span class="portrait"><img src="" alt="" /></span>
+          <div class="dialog__body">
+            <span class="cap dlg-year"></span>
+            <h3 class="h3 dlg-name" id="dlg-name"></h3>
+            <p class="reg"></p>
+            <hr />
+            <p class="dlg-bio"></p>
+          </div>
+        </div>
+      </dialog>
+      <section class="section" id="likhachev" aria-labelledby="likh-title">
+        <div class="wrap">
+          <div class="likh">
+            <div class="likh__text">
+              <span class="cap">Наука</span>
+              <h2 class="h2" id="likh-title">
+                Международные Лихачёвские научные чтения
+              </h2>
+              <p>
+                В 1993 году академик Д.С. Лихачёв инициировал в Университете
+                «Дни науки». С 2001 года это Международные Лихачёвские научные
+                чтения — крупнейший в мире ежегодный форум гуманитарного знания.
+              </p>
+              <div class="likh__nums">
+                <div>
+                  <span class="num">25</span>
+                  <p>лет в статусе международного форума</p>
+                </div>
+                <div>
+                  <span class="num">1500</span>
+                  <p>участников ежегодно</p>
+                </div>
+                <div>
+                  <span class="num">59</span>
+                  <p>стран мира</p>
+                </div>
+              </div>
+              <div class="btns">
+                <button class="btn btn--burgundy" type="button" data-booklet>
+                  Подробнее о Чтениях →
+                </button>
+              </div>
+              <div class="booklet" hidden>
+                <i
+                  data-src="img/likh-buklet/p-01.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 1 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-02.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 2 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-03.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 3 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-04.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 4 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-05.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 5 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-06.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 6 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-07.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 7 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-08.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 8 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-09.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 9 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-10.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 10 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-11.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 11 из 12"
+                ></i
+                ><i
+                  data-src="img/likh-buklet/p-12.jpg"
+                  data-cap="Буклет XXIII Международных Лихачёвских научных чтений, 2025 · страница 12 из 12"
+                ></i>
+              </div>
+            </div>
+            <figure>
+              <div class="pp">
+                <img
+                  src="img/likh.jpg"
+                  alt="Пленарное заседание Лихачёвских чтений"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>Пленарное заседание Лихачёвских чтений</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section section--tint"
+        id="campus"
+        aria-labelledby="campus-title"
+      >
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">Кампус</span>
+            <div class="head__text">
+              <h2 class="h2" id="campus-title">
+                Уникальный университетский комплекс
+              </h2>
+              <p class="lead">
+                Единственное в своём роде архитектурное сооружение на 50 тыс.
+                кв. м — образец креативного пространства, где есть всё для
+                учёбы, творчества и жизни.
+              </p>
+            </div>
+          </div>
+          <div class="campus">
+            <figure class="place place--l">
+              <img
+                src="img/c-lib.jpg"
+                alt="Научная библиотека им. Д.А. Гранина"
+                loading="lazy"
+              /><b>Научная библиотека им. Д.А. Гранина</b
+              ><span>Свыше 600 тыс. изданий, читальный зал на 400 мест</span>
+            </figure>
+            <figure class="place place--l">
+              <img
+                src="img/c-tkz.jpg"
+                alt="Театрально-концертный зал им. А.П. Петрова"
+                loading="lazy"
+              /><b>Театрально-концертный зал им. А.П. Петрова</b
+              ><span
+                >800 мест, выступления признанных мастеров искусств, премьеры
+                студенческих спектаклей</span
+              >
+            </figure>
+            <figure class="place place--m place--first-m">
+              <img src="img/c-tv.jpg" alt="Медиацентр" loading="lazy" /><b
+                >Медиацентр</b
+              ><span>Две студии нового поколения для проведения съёмок</span>
+            </figure>
+            <figure class="place place--m">
+              <img
+                src="img/c-sound.jpg"
+                alt="Студии звукозаписи"
+                loading="lazy"
+              /><b>Студии звукозаписи</b
+              ><span>Профессиональный звук и музыкальные технологии</span>
+            </figure>
+            <figure class="place place--m">
+              <img
+                src="img/c-sport.jpg"
+                alt="Спортивный комплекс"
+                loading="lazy"
+              /><b>Спортивный комплекс</b
+              ><span>Игровой зал, шейпинг-зал, тренажёры</span>
+            </figure>
+            <figure class="place place--s">
+              <img
+                src="img/c-ital.jpg"
+                alt="Итальянская улица"
+                loading="lazy"
+              /><b>Итальянская улица</b
+              ><span
+                >Стилизованная рекреация — тёплый переход между Учебным корпусом
+                и Домом студентов</span
+              >
+            </figure>
+            <figure class="place place--s">
+              <img src="img/c-beach.jpg" alt="«Пляж»" loading="lazy" /><b
+                >«Пляж»</b
+              ><span
+                >Рекреация, где можно поспать, но запрещено ловить
+                крокодилов</span
+              >
+            </figure>
+            <figure class="place place--s">
+              <img src="img/c-dorm.jpg" alt="Дом студентов" loading="lazy" /><b
+                >Дом студентов</b
+              ><span>Общежитие на 800 человек</span>
+            </figure>
+            <figure class="place place--s">
+              <img
+                src="img/c-hall.jpg"
+                alt="Холл Дома студентов"
+                loading="lazy"
+              /><b>Холл Дома студентов</b
+              ><span>Отдельный вход с водопадом</span>
+            </figure>
+          </div>
+          <div class="btns">
+            <a
+              class="btn btn--outline"
+              href="https://www.gup.ru/gup3d/3dtour3/index.html"
+              target="_blank"
+              rel="noopener"
+              >Открыть 3D-тур по кампусу →</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- ===== ГИМНАЗИЯ «ОЛЬГИНО»: начало блока ===== -->
+      <section class="section" id="olgino" aria-labelledby="olgino-title">
+        <div class="wrap">
+          <div class="olg">
+            <div class="olg__text">
+              <span class="cap">Гимназия</span>
+              <h2 class="h2 olg__title" id="olgino-title">
+                Международная гимназия «Ольгино»
+              </h2>
+              <p>
+                Основана в 1999 году и является неотъемлемой частью
+                Университета. Здесь старшеклассники 8–11 классов из Петербурга,
+                регионов России и стран СНГ получают сильную подготовку к ЕГЭ,
+                олимпиадам и поступлению в вуз. Уже со школьной скамьи
+                гимназисты становятся частью университетской жизни: занятия
+                ведут в том числе преподаватели СПбГУП. Учёба проходит в
+                курортной зоне города на берегу Финского залива, формат обучения
+                на выбор — полный пансион или полупансион. Большинство
+                выпускников гимназии продолжают обучение в Университете.
+              </p>
+              <div class="likh__nums olg__nums">
+                <div>
+                  <span class="num">27</span>
+                  <p>лет успешной работы</p>
+                </div>
+                <div>
+                  <span class="num">1242</span>
+                  <p>выпускника</p>
+                </div>
+                <div>
+                  <span class="num">26 %</span>
+                  <p>
+                    гимназистов — победители российских и международных олимпиад
+                  </p>
+                </div>
+              </div>
+              <div class="btns">
+                <a
+                  class="btn btn--burgundy"
+                  href="https://olgino.gup.ru/"
+                  target="_blank"
+                  rel="noopener"
+                  >Сайт гимназии →</a
+                >
+              </div>
+            </div>
+            <div
+              class="olg__media olg-sl"
+              data-gallery
+              role="region"
+              aria-roledescription="слайдер"
+              aria-label="Фото гимназии «Ольгино»"
+            >
+              <div class="olg-sl__stage">
+                <div class="olg-sl__view">
+                  <div class="olg-sl__track">
+                    <button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-kafe.jpg"
+                      data-cap="Кафе гимназии"
+                      aria-label="Открыть фото во весь экран: Кафе гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-kafe.jpg"
+                        alt="Кафе гимназии"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-korpus.jpg"
+                      data-cap="Корпус Международной гимназии «Ольгино»"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: Корпус Международной гимназии «Ольгино»"
+                    >
+                      <img
+                        src="img/olgino/olg-korpus.jpg"
+                        loading="lazy"
+                        alt="Корпус Международной гимназии «Ольгино»"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-kompyuternyj-klass.jpg"
+                      data-cap="Гимназисты на занятии в компьютерном классе"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: Гимназисты на занятии в компьютерном классе"
+                    >
+                      <img
+                        src="img/olgino/olg-kompyuternyj-klass.jpg"
+                        loading="lazy"
+                        alt="Гимназисты на занятии в компьютерном классе"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-komnata.jpg"
+                      data-cap="Комната в пансионе гимназии"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: Комната в пансионе гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-komnata.jpg"
+                        loading="lazy"
+                        alt="Комната в пансионе гимназии"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-biblioteka.jpg"
+                      data-cap="В библиотеке гимназии"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: В библиотеке гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-biblioteka.jpg"
+                        loading="lazy"
+                        alt="В библиотеке гимназии"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-zanyatie.jpg"
+                      data-cap="На занятиях в гимназии"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: На занятиях в гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-zanyatie.jpg"
+                        loading="lazy"
+                        alt="На занятиях в гимназии"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-pedagogi.jpg"
+                      data-cap="Педагоги гимназии"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: Педагоги гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-pedagogi.jpg"
+                        loading="lazy"
+                        alt="Педагоги гимназии"
+                      /></button
+                    ><button
+                      class="olg-sl__slide pp--zoom"
+                      type="button"
+                      data-src="img/olgino/olg-prazdnik.jpg"
+                      data-cap="Праздник на территории гимназии"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      aria-label="Открыть фото во весь экран: Праздник на территории гимназии"
+                    >
+                      <img
+                        src="img/olgino/olg-prazdnik.jpg"
+                        loading="lazy"
+                        alt="Праздник на территории гимназии"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <button
+                  class="olg-sl__arrow olg-sl__arrow--prev"
+                  type="button"
+                  data-d="-1"
+                  aria-label="Предыдущее фото"
+                >
+                  ←</button
+                ><button
+                  class="olg-sl__arrow olg-sl__arrow--next"
+                  type="button"
+                  data-d="1"
+                  aria-label="Следующее фото"
+                >
+                  →
+                </button>
+              </div>
+              <div class="olg-sl__bar">
+                <span class="olg-sl__cap" aria-live="polite">Кафе гимназии</span
+                ><span class="olg-sl__count"><b>1</b> / 8</span>
+              </div>
+              <div class="olg-sl__thumbs">
+                <button
+                  class="olg-sl__thumb is-active"
+                  type="button"
+                  data-i="0"
+                  aria-current="true"
+                  aria-label="Фото 1 из 8: Кафе гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-kafe-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="1"
+                  aria-label="Фото 2 из 8: Корпус Международной гимназии «Ольгино»"
+                >
+                  <img
+                    src="img/olgino/olg-korpus-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="2"
+                  aria-label="Фото 3 из 8: Гимназисты на занятии в компьютерном классе"
+                >
+                  <img
+                    src="img/olgino/olg-kompyuternyj-klass-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="3"
+                  aria-label="Фото 4 из 8: Комната в пансионе гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-komnata-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="4"
+                  aria-label="Фото 5 из 8: В библиотеке гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-biblioteka-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="5"
+                  aria-label="Фото 6 из 8: На занятиях в гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-zanyatie-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="6"
+                  aria-label="Фото 7 из 8: Педагоги гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-pedagogi-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  /></button
+                ><button
+                  class="olg-sl__thumb"
+                  type="button"
+                  data-i="7"
+                  aria-label="Фото 8 из 8: Праздник на территории гимназии"
+                >
+                  <img
+                    src="img/olgino/olg-prazdnik-s.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== ГИМНАЗИЯ «ОЛЬГИНО»: конец блока ===== -->
+
+      <!-- PEOPLE, LIKHACHEV, CAMPUS, OLGINO: разметка без изменений. См. ваш рабочий index.html. -->
+      <section class="section" id="branches" aria-labelledby="branches-title">
+          <div class="wrap">
+              <div class="head">
+                  <span class="cap">Филиалы</span>
+                  <div class="head__text">
+                      <h2 class="h2" id="branches-title">Петербургское образование — в пяти городах</h2>
+                      <p class="lead">Студенты филиалов учатся в своём городе, а на последнем курсе приезжают в Петербург: слушают лекции, проходят практику и защищают диплом в СПбГУП.</p>
+                  </div>
+              </div>
+              <div id="branches-app" data-source="data/branches.json"></div>
+          </div>
+      </section>
+      <section class="section" id="alumni" aria-labelledby="alumni-title">
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">Выпускники</span>
+            <div class="head__text">
+              <h2 class="h2" id="alumni-title">
+                Выпускники — главное достижение
+              </h2>
+              <p class="lead">
+                За последние 15 лет в течение 6 месяцев после окончания вуза из
+                17 998 не были трудоустроены 14 человек.
+              </p>
+            </div>
+          </div>
+          <div
+            id="alumni-app"
+            data-source="data/alumni.json"
+            data-limit="2"
+            data-all-href="alumni.html"
+            aria-busy="true"
+          >
+            <p class="alumni-status" id="alumni-status">Загружаем отзывы…</p>
+          </div>
+        </div>
+        <dialog
+          class="alumni-review-dialog"
+          id="alumni-review-dialog"
+          aria-labelledby="alumni-review-dialog-title"
+        >
+          <div class="alumni-review-dialog__head">
+            <span class="cap">Выпускники</span>
+            <button
+              class="alumni-review-dialog__close"
+              type="button"
+              aria-label="Закрыть отзыв"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="m6 6 12 12M18 6 6 18"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="alumni-review-dialog__body">
+            <h3 class="h3" id="alumni-review-dialog-title" tabindex="-1">
+              Отзыв выпускника
+            </h3>
+            <blockquote class="alumni-review-dialog__quote">
+              <p class="alumni-review-dialog__text"></p>
+              <footer class="alumni-review-dialog__author">
+                <b class="alumni-review-dialog__name"></b>
+                <span class="alumni-review-dialog__year"></span>
+                <span class="alumni-review-dialog__role"></span>
+              </footer>
+            </blockquote>
+          </div>
+        </dialog>
+      </section>
+      <section class="section" id="press" aria-labelledby="press-title">
+        <div class="wrap">
+          <div class="head">
+            <span class="cap">СМИ о столетии</span>
+            <div class="head__text">
+              <h2 class="h2" id="press-title">О юбилее Университета пишут</h2>
+              <p class="lead">
+                Публикации федеральных и петербургских изданий, профсоюзной
+                прессы и партнёров о 100-летии СПбГУП.
+              </p>
+            </div>
+          </div>
+          <div class="press-strip">
+            <span class="press-label" aria-hidden="true">Статьи</span>
+            <div
+              class="press"
+              id="press-list"
+              data-source="data/press.json"
+              tabindex="0"
+              aria-label="Публикации СМИ — листайте в сторону"
+            ></div>
+          </div>
+          <div class="press-foot">
+            <a class="btn btn--outline press-foot__all" href="press.html"
+              >Читать все статьи →</a
+            >
+            <div class="press-nav" id="press-nav" hidden>
+              <span class="press-nav__bar" aria-hidden="true"><i></i></span>
+              <button
+                type="button"
+                data-d="-1"
+                aria-label="Предыдущие публикации"
+              >
+                ←
+              </button>
+              <span class="press-nav__count" aria-live="polite"></span>
+              <button
+                type="button"
+                data-d="1"
+                aria-label="Следующие публикации"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="admission" aria-labelledby="cta-title">
+        <div class="wrap">
+          <div class="cta">
+            <div class="cta__in">
+              <img src="img/cta.jpg" alt="Студенты СПбГУП" loading="lazy" />
+              <div class="cta__text">
+                <span class="cap cap--plain">Абитуриентам</span>
+                <h2 class="h2" id="cta-title">
+                  Второй век Университета начинается с Вами
+                </h2>
+                <p class="lead">
+                  Приёмная кампания 2027: направления подготовки, сроки,
+                  консультации приёмной комиссии.
+                </p>
+                <div class="btns">
+                  <a
+                    class="btn btn--burgundy"
+                    href="https://www.gup.ru/enroll/help/"
+                    target="_blank"
+                    rel="noopener"
+                    >Поступить в СПбГУП →</a
+                  ><a
+                    class="btn btn--outline"
+                    href="https://www.gup.ru/personalnyy-konsultant/"
+                    target="_blank"
+                    rel="noopener"
+                    >Приёмная комиссия</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <dialog class="lightbox" id="lightbox" aria-label="Фотоархив">
+        <button class="lightbox__close" type="button" aria-label="Закрыть">
+          ✕
+        </button>
+        <figure>
+          <img src="" alt="" />
+          <figcaption></figcaption>
+        </figure>
+        <div class="lightbox__nav">
+          <button type="button" data-d="-1" aria-label="Предыдущее фото">
+            ←</button
+          ><span class="lightbox__count"></span
+          ><button type="button" data-d="1" aria-label="Следующее фото">
+            →
+          </button>
+        </div>
+      </dialog>
+    </main>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <img
+              src="img/logo-h-1926-white.svg"
+              alt="100 лет. Санкт-Петербургский Гуманитарный университет профсоюзов. 1926 — год основания Университета"
+              width="508"
+              height="84"
+            />
+          </div>
+          <address>
+            192238, Санкт-Петербург,<br />ул. Фучика, 15<br />Тел. (812)
+            269-57-58
+          </address>
+          <ul>
+            <li>
+              <a href="https://www.gup.ru/" target="_blank" rel="noopener"
+                >Основной сайт gup.ru</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://vk.com/spbgup_official"
+                target="_blank"
+                rel="noopener"
+                >ВКонтакте</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://t.me/spbgup_students"
+                target="_blank"
+                rel="noopener"
+                >Telegram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <span>© 1926–2026 СП<span class="lc">б</span>ГУП</span>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/logo-morph.js?v=20261015"></script>
+    <script src="assets/salute.js?v=20261015"></script>
+    <script src="assets/main.js?v=20261019"></script>
+    <script src="assets/olgino-slider.js?v=20261015"></script>
+    <script src="assets/congrats-wall.js?v=20261102"></script>
+    <script id="alumni-review-script">
+      /* Отзывы выпускников: четыре реальные строки и «Читать полностью». */
+      (function () {
+        function initAlumniReviews() {
+          const section = document.getElementById("alumni");
+          const modal = document.getElementById("alumni-review-dialog");
+          if (!section || !modal) return;
+
+          const reviews = new Map();
+          const widths = new WeakMap();
+          const body = modal.querySelector(".alumni-review-dialog__body");
+          const title = document.getElementById("alumni-review-dialog-title");
+          let frame = 0,
+            opener = null,
+            oldOverflow = "",
+            oldPadding = "";
+
+          function cleanText(el) {
+            return el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+          }
+          function measure() {
+            frame = 0;
+            reviews.forEach(({ button }, quote) => {
+              if (!quote.isConnected || !quote.getBoundingClientRect().width)
+                return;
+              const lineHeight = Number.parseFloat(
+                getComputedStyle(quote).lineHeight
+              );
+              const isLong = quote.scrollHeight > Math.ceil(lineHeight * 4) + 1;
+              if (button.hidden === isLong) button.hidden = !isLong;
+              const name = cleanText(
+                quote.closest(".alum").querySelector(".alum__body b")
+              );
+              button.setAttribute(
+                "aria-label",
+                "Читать полностью отзыв: " + name
+              );
+            });
+          }
+          function scheduleMeasure() {
+            if (frame) return;
+            frame = requestAnimationFrame(() => {
+              frame = requestAnimationFrame(() => {
+                frame = 0;
+                measure();
+              });
+            });
+          }
+          const resizeObserver =
+            "ResizeObserver" in window
+              ? new ResizeObserver((entries) => {
+                  let changed = false;
+                  entries.forEach((entry) => {
+                    const width = entry.contentRect.width;
+                    if (widths.get(entry.target) !== width) {
+                      widths.set(entry.target, width);
+                      changed = true;
+                    }
+                  });
+                  if (changed) scheduleMeasure();
+                })
+              : null;
+
+          function enhanceReviews() {
+            reviews.forEach(({ wrapper }, quote) => {
+              if (!section.contains(quote)) {
+                if (resizeObserver) resizeObserver.unobserve(wrapper);
+                reviews.delete(quote);
+              }
+            });
+            section
+              .querySelectorAll(".alumni .alum .quote")
+              .forEach((quote) => {
+                if (reviews.has(quote)) return;
+                let wrapper = quote.parentElement;
+                if (!wrapper.classList.contains("alum__review")) {
+                  wrapper = document.createElement("div");
+                  wrapper.className = "alum__review";
+                  quote.before(wrapper);
+                  wrapper.append(quote);
+                }
+                let button = wrapper.querySelector(".alum__more");
+                if (!button) {
+                  button = document.createElement("button");
+                  button.type = "button";
+                  button.className = "alum__more";
+                  button.textContent = "Читать полностью";
+                  button.hidden = true;
+                  wrapper.append(button);
+                }
+                button.setAttribute("aria-haspopup", "dialog");
+                button.setAttribute("aria-controls", modal.id);
+                quote.classList.add("is-clamped");
+                reviews.set(quote, { wrapper, button });
+                if (resizeObserver) resizeObserver.observe(wrapper);
+              });
+          }
+
+          function fullText(quote) {
+            let text = "";
+            function collect(node) {
+              if (node.nodeType === Node.TEXT_NODE)
+                text += node.textContent.replace(/\s+/g, " ");
+              else if (node.nodeName === "BR") text += "\n";
+              else node.childNodes.forEach(collect);
+            }
+            quote.childNodes.forEach(collect);
+            return text.replace(/ *\n */g, "\n").trim();
+          }
+          function openReview(button) {
+            const card = button.closest(".alum");
+            const quote = card && card.querySelector(".quote");
+            if (!quote || modal.open) return;
+            opener = button;
+            modal.querySelector(".alumni-review-dialog__text").textContent =
+              fullText(quote);
+            modal.querySelector(".alumni-review-dialog__name").textContent =
+              cleanText(card.querySelector(".alum__body b"));
+            const year = modal.querySelector(".alumni-review-dialog__year");
+            year.textContent = cleanText(
+              card.querySelector(".alum__body .cap")
+            );
+            year.hidden = !year.textContent;
+            const role = modal.querySelector(".alumni-review-dialog__role");
+            role.textContent = cleanText(card.querySelector(".alum__role"));
+            role.hidden = !role.textContent;
+            oldOverflow = document.body.style.overflow;
+            oldPadding = document.body.style.paddingRight;
+            const scrollbar = innerWidth - document.documentElement.clientWidth;
+            if (scrollbar > 0)
+              document.body.style.paddingRight =
+                Number.parseFloat(
+                  getComputedStyle(document.body).paddingRight
+                ) +
+                scrollbar +
+                "px";
+            document.body.style.overflow = "hidden";
+            modal.showModal();
+            body.scrollTop = 0;
+            title.focus({ preventScroll: true });
+          }
+          section.addEventListener("click", (event) => {
+            const button = event.target.closest(".alum__more");
+            if (button && section.contains(button)) openReview(button);
+          });
+          modal
+            .querySelector(".alumni-review-dialog__close")
+            .addEventListener("click", () => modal.close());
+          function outsideModal(event) {
+            const rect = modal.getBoundingClientRect();
+            return (
+              event.clientX < rect.left ||
+              event.clientX > rect.right ||
+              event.clientY < rect.top ||
+              event.clientY > rect.bottom
+            );
+          }
+          let downOnBackdrop = false;
+          modal.addEventListener("pointerdown", (event) => {
+            downOnBackdrop = event.target === modal && outsideModal(event);
+          });
+          modal.addEventListener("click", (event) => {
+            if (downOnBackdrop && event.target === modal && outsideModal(event))
+              modal.close();
+            downOnBackdrop = false;
+          });
+          modal.addEventListener("close", () => {
+            document.body.style.overflow = oldOverflow;
+            document.body.style.paddingRight = oldPadding;
+            if (
+              opener &&
+              opener.isConnected &&
+              !opener.hidden &&
+              opener.getClientRects().length
+            )
+              opener.focus({ preventScroll: true });
+            opener = null;
+          });
+
+          new MutationObserver((records) => {
+            const changed = records.some((record) => {
+              if (record.type === "attributes")
+                return record.target.matches(".alumni-group");
+              const target =
+                record.target.nodeType === Node.ELEMENT_NODE
+                  ? record.target
+                  : record.target.parentElement;
+              return target && target.closest(".alumni");
+            });
+            if (changed) {
+              enhanceReviews();
+              scheduleMeasure();
+              setTimeout(measure, 150);
+              setTimeout(measure, 500);
+            }
+          }).observe(section, {
+            subtree: true,
+            childList: true,
+            characterData: true,
+            attributes: true,
+            attributeFilter: ["hidden"],
+          });
+          window.addEventListener("resize", scheduleMeasure);
+          window.addEventListener("load", scheduleMeasure);
+          if (document.fonts) {
+            document.fonts.ready.then(scheduleMeasure);
+            document.fonts.addEventListener("loadingdone", scheduleMeasure);
+          }
+          enhanceReviews();
+          scheduleMeasure();
+        }
+        if (document.readyState === "loading")
+          document.addEventListener("DOMContentLoaded", initAlumniReviews, {
+            once: true,
+          });
+        else initAlumniReviews();
+      })();
+    </script>
+    <script src="assets/alumni.js?v=4"></script>
+    <script src="assets/branches.js?v=2"></script>
+    <script src="assets/press.js?v=5"></script>
+    <script src="assets/staff.js?v=3"></script>
+    <script src="assets/header-line.js?v=1"></script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Отзывы выпускников · 100 лет СПбГУП</title>
+<meta name="description" content="Отзывы выпускников Санкт-Петербургского Гуманитарного университета профсоюзов по факультетам и направлениям подготовки.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=20261015">
+<link rel="stylesheet" href="assets/blocks-2026-10.css?v=20261028">
+
+<style id="alumni-review-styles">
+        #alumni .alum__review { grid-column: 1 / -1; min-width: 0; align-self: start; }
+        #alumni .alum__review .quote.is-clamped { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; line-height: 1.6; overflow: hidden; overflow-wrap: anywhere; max-height: 6.4em; }
+        #alumni .alum__more { display: inline-block; margin-top: 10px; background: none; border: 0; border-bottom: 1px solid var(--gold, #a8834f); padding: 4px 0; font: 500 13px/1.5 var(--sans, Arial, sans-serif); text-align: left; color: var(--burgundy, #8e070b); cursor: pointer; }
+        #alumni .alum__more[hidden] { display: none !important; }
+        #alumni .alum__more:hover { color: var(--burgundy-dark, #5a0407); border-color: currentColor; }
+        #alumni .alum__more:focus-visible, #alumni .alumni-review-dialog__close:focus-visible { outline: 2px solid var(--gold, #a8834f); outline-offset: 3px; }
+        #alumni .alumni-review-dialog { padding: 0; border: 1px solid var(--gold, #a8834f); margin: auto; width: min(720px, calc(100vw - 32px)); max-width: none; max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px); overflow: hidden; background: var(--white, #fff); color: var(--text, #3c3c3c); box-shadow: 0 24px 80px rgba(20, 4, 5, 0.25); }
+        #alumni .alumni-review-dialog[open] { display: flex; flex-direction: column; }
+        #alumni .alumni-review-dialog::backdrop { background: rgba(20, 4, 5, 0.65); backdrop-filter: blur(3px); }
+        #alumni .alumni-review-dialog__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex: none; padding: 18px 24px 0 40px; }
+        #alumni .alumni-review-dialog .cap { color: var(--burgundy, #8e070b); font-size: 11px; }
+        #alumni .alumni-review-dialog .cap::before { background: var(--gold, #a8834f); }
+        #alumni .alumni-review-dialog__close { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border: 0; padding: 0; background: transparent; color: var(--burgundy, #8e070b); cursor: pointer; }
+        #alumni .alumni-review-dialog__close:hover { background: var(--tint, #f8f1ef); }
+        #alumni .alumni-review-dialog__body { padding: 20px 40px 40px; overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+        #alumni .alumni-review-dialog__body .h3 { font-size: clamp(24px, 3vw, 32px); color: var(--burgundy, #8e070b); }
+        #alumni .alumni-review-dialog__quote { margin: 24px 0 0; }
+        #alumni .alumni-review-dialog__text { font: italic 300 clamp(16px, 1.2vw, 19px) / 1.8 var(--serif, Georgia, serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+        #alumni .alumni-review-dialog__author { display: grid; gap: 6px; border-top: 1px solid var(--line, #e7e3dc); padding-top: 22px; margin-top: 28px; overflow-wrap: anywhere; }
+        #alumni .alumni-review-dialog__name { font: 500 16px/1.4 var(--sans, Arial, sans-serif); color: var(--burgundy, #8e070b); }
+        #alumni .alumni-review-dialog__year, #alumni .alumni-review-dialog__role { font-size: var(--fs-small, 14px); color: var(--muted, #6b6b6b); }
+        #alumni .alumni-review-dialog [hidden] { display: none !important; }
+        @media (max-width: 600px) {
+            #alumni .alumni-review-dialog { max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); width: calc(100vw - 24px); }
+            #alumni .alumni-review-dialog__head { padding: 12px 12px 0 22px; }
+            #alumni .alumni-review-dialog__body { padding: 16px 22px 28px; }
+        }
+    </style>
+</head>
+<body class="page-chron page-alumni">
+<a class="visually-hidden" href="#main">Перейти к содержанию</a>
+<header class="site-header"><div class="wrap site-header__in"><a class="brand" href="index.html" aria-label="СПбГУП, 100 лет — в начало"><img src="img/logo-h-short-white.svg" alt="100 лет СПбГУП" width="321" height="84"></a><nav class="nav" aria-label="Разделы"><a href="index.html#chronicle">Хроника</a><a href="index.html#congrats">Поздравления</a><a href="index.html#people">Люди</a><a href="index.html#campus">Кампус</a><a href="index.html#olgino">Гимназия «Ольгино»</a><a href="index.html#branches">Филиалы</a><a href="index.html#alumni">Выпускники</a><a href="index.html#press">СМИ</a></nav><a class="btn btn--outline-light" href="index.html#congrats">Поздравить</a><button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button></div></header><div class="menu" id="menu" hidden role="dialog" aria-modal="true" aria-label="Меню"><div class="menu__top"><img src="img/logo-h-short-white.svg" alt="100 лет СПбГУП"><button class="menu__close" type="button" aria-label="Закрыть меню">✕</button></div><nav aria-label="Разделы"><a href="index.html#chronicle">Хроника</a><a href="index.html#congrats">Поздравления</a><a href="index.html#people">Люди</a><a href="index.html#campus">Кампус</a><a href="index.html#olgino">Гимназия «Ольгино»</a><a href="index.html#branches">Филиалы</a><a href="index.html#alumni">Выпускники</a><a href="index.html#press">СМИ</a></nav><a class="btn btn--white" href="index.html#congrats">Поздравить Университет</a></div>
+<main id="main">
+<section class="chron-hero"><div class="wrap"><a class="chron-back" href="index.html#alumni">← На главную</a><h1 class="h1">Отзывы выпускников</h1><p class="lead">Выпускники СПбГУП — о годах учёбы, преподавателях и профессии. Выберите факультет и направление подготовки.</p></div></section>
+<section class="section" id="alumni" aria-labelledby="alumni-page-title">
+<div class="wrap">
+<h2 class="visually-hidden" id="alumni-page-title">Отзывы по направлениям подготовки</h2>
+<form class="alumni-search" id="alumni-search" role="search" autocomplete="off">
+<label class="cap" for="alumni-q">Поиск по выпускникам</label>
+<div class="alumni-search__field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="alumni-q" type="search" placeholder="Фамилия, год выпуска, должность или организация" aria-describedby="alumni-search-note"><button class="alumni-search__clear" type="button" aria-label="Очистить поиск" hidden>✕</button></div>
+<p class="alumni-search__note" id="alumni-search-note" aria-live="polite"></p>
+</form>
+<div id="alumni-app" data-source="data/alumni.json" data-limit="0" aria-busy="true">
+<p class="alumni-status" id="alumni-status">Загружаем отзывы…</p>
+</div>
+<a class="btn btn--outline chron-top" href="index.html#alumni">← Вернуться на главную</a>
+</div>
+<dialog class="alumni-review-dialog" id="alumni-review-dialog" aria-labelledby="alumni-review-dialog-title">
+            <div class="alumni-review-dialog__head">
+                <span class="cap">Выпускники</span>
+                <button class="alumni-review-dialog__close" type="button" aria-label="Закрыть отзыв">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" /></svg>
+                </button>
+            </div>
+            <div class="alumni-review-dialog__body">
+                <h3 class="h3" id="alumni-review-dialog-title" tabindex="-1">Отзыв выпускника</h3>
+                <blockquote class="alumni-review-dialog__quote">
+                    <p class="alumni-review-dialog__text"></p>
+                    <footer class="alumni-review-dialog__author">
+                        <b class="alumni-review-dialog__name"></b>
+                        <span class="alumni-review-dialog__year"></span>
+                        <span class="alumni-review-dialog__role"></span>
+                    </footer>
+                </blockquote>
+            </div>
+        </dialog>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer__top"><div class="footer__brand"><img src="img/logo-h-1926-white.svg" alt="100 лет. Санкт-Петербургский Гуманитарный университет профсоюзов. 1926 — год основания Университета" width="508" height="84"></div><address>192238, Санкт-Петербург,<br>ул. Фучика, 15<br>Тел. (812) 269-57-58</address><ul><li><a href="https://www.gup.ru/" target="_blank" rel="noopener">Основной сайт gup.ru</a></li><li><a href="https://vk.com/spbgup_official" target="_blank" rel="noopener">ВКонтакте</a></li><li><a href="https://t.me/spbgup_students" target="_blank" rel="noopener">Telegram</a></li></ul></div><div class="footer__bottom"><span>© 1926–2026 СП<span class="lc">б</span>ГУП</span></div></div></footer>
+<script src="assets/main.js?v=20261019"></script>
+<script id="alumni-review-script">
+    /* Отзывы выпускников: четыре реальные строки и «Читать полностью». */
+    (function () {
+        function initAlumniReviews() {
+            const section = document.getElementById("alumni");
+            const modal = document.getElementById("alumni-review-dialog");
+            if (!section || !modal) return;
+
+            const reviews = new Map();
+            const widths = new WeakMap();
+            const body = modal.querySelector(".alumni-review-dialog__body");
+            const title = document.getElementById("alumni-review-dialog-title");
+            let frame = 0, opener = null, oldOverflow = "", oldPadding = "";
+
+            function cleanText(el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; }
+            function measure() {
+                frame = 0;
+                reviews.forEach(({ button }, quote) => {
+                    if (!quote.isConnected || !quote.getBoundingClientRect().width) return;
+                    const lineHeight = Number.parseFloat(getComputedStyle(quote).lineHeight);
+                    const isLong = quote.scrollHeight > Math.ceil(lineHeight * 4) + 1;
+                    if (button.hidden === isLong) button.hidden = !isLong;
+                    const name = cleanText(quote.closest(".alum").querySelector(".alum__body b"));
+                    button.setAttribute("aria-label", "Читать полностью отзыв: " + name);
+                });
+            }
+            function scheduleMeasure() {
+                if (frame) return;
+                frame = requestAnimationFrame(() => {
+                    frame = requestAnimationFrame(() => { frame = 0; measure(); });
+                });
+            }
+            const resizeObserver = "ResizeObserver" in window ? new ResizeObserver((entries) => {
+                let changed = false;
+                entries.forEach((entry) => {
+                    const width = entry.contentRect.width;
+                    if (widths.get(entry.target) !== width) { widths.set(entry.target, width); changed = true; }
+                });
+                if (changed) scheduleMeasure();
+            }) : null;
+
+            function enhanceReviews() {
+                reviews.forEach(({ wrapper }, quote) => {
+                    if (!section.contains(quote)) {
+                        if (resizeObserver) resizeObserver.unobserve(wrapper);
+                        reviews.delete(quote);
+                    }
+                });
+                section.querySelectorAll(".alumni .alum .quote").forEach((quote) => {
+                    if (reviews.has(quote)) return;
+                    let wrapper = quote.parentElement;
+                    if (!wrapper.classList.contains("alum__review")) {
+                        wrapper = document.createElement("div");
+                        wrapper.className = "alum__review";
+                        quote.before(wrapper);
+                        wrapper.append(quote);
+                    }
+                    let button = wrapper.querySelector(".alum__more");
+                    if (!button) {
+                        button = document.createElement("button");
+                        button.type = "button";
+                        button.className = "alum__more";
+                        button.textContent = "Читать полностью";
+                        button.hidden = true;
+                        wrapper.append(button);
+                    }
+                    button.setAttribute("aria-haspopup", "dialog");
+                    button.setAttribute("aria-controls", modal.id);
+                    quote.classList.add("is-clamped");
+                    reviews.set(quote, { wrapper, button });
+                    if (resizeObserver) resizeObserver.observe(wrapper);
+                });
+            }
+
+            function fullText(quote) {
+                let text = "";
+                function collect(node) {
+                    if (node.nodeType === Node.TEXT_NODE) text += node.textContent.replace(/\s+/g, " ");
+                    else if (node.nodeName === "BR") text += "\n";
+                    else node.childNodes.forEach(collect);
+                }
+                quote.childNodes.forEach(collect);
+                return text.replace(/ *\n */g, "\n").trim();
+            }
+            function openReview(button) {
+                const card = button.closest(".alum");
+                const quote = card && card.querySelector(".quote");
+                if (!quote || modal.open) return;
+                opener = button;
+                modal.querySelector(".alumni-review-dialog__text").textContent = fullText(quote);
+                modal.querySelector(".alumni-review-dialog__name").textContent = cleanText(card.querySelector(".alum__body b"));
+                const year = modal.querySelector(".alumni-review-dialog__year");
+                year.textContent = cleanText(card.querySelector(".alum__body .cap"));
+                year.hidden = !year.textContent;
+                const role = modal.querySelector(".alumni-review-dialog__role");
+                role.textContent = cleanText(card.querySelector(".alum__role"));
+                role.hidden = !role.textContent;
+                oldOverflow = document.body.style.overflow;
+                oldPadding = document.body.style.paddingRight;
+                const scrollbar = innerWidth - document.documentElement.clientWidth;
+                if (scrollbar > 0) document.body.style.paddingRight = (Number.parseFloat(getComputedStyle(document.body).paddingRight) + scrollbar) + "px";
+                document.body.style.overflow = "hidden";
+                modal.showModal();
+                body.scrollTop = 0;
+                title.focus({ preventScroll: true });
+            }
+            section.addEventListener("click", (event) => {
+                const button = event.target.closest(".alum__more");
+                if (button && section.contains(button)) openReview(button);
+            });
+            modal.querySelector(".alumni-review-dialog__close").addEventListener("click", () => modal.close());
+            function outsideModal(event) {
+                const rect = modal.getBoundingClientRect();
+                return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+            }
+            let downOnBackdrop = false;
+            modal.addEventListener("pointerdown", (event) => { downOnBackdrop = event.target === modal && outsideModal(event); });
+            modal.addEventListener("click", (event) => {
+                if (downOnBackdrop && event.target === modal && outsideModal(event)) modal.close();
+                downOnBackdrop = false;
+            });
+            modal.addEventListener("close", () => {
+                document.body.style.overflow = oldOverflow;
+                document.body.style.paddingRight = oldPadding;
+                if (opener && opener.isConnected && !opener.hidden && opener.getClientRects().length) opener.focus({ preventScroll: true });
+                opener = null;
+            });
+
+            new MutationObserver((records) => {
+                const changed = records.some((record) => {
+                    if (record.type === "attributes") return record.target.matches(".alumni-group");
+                    const target = record.target.nodeType === Node.ELEMENT_NODE ? record.target : record.target.parentElement;
+                    return target && target.closest(".alumni");
+                });
+                if (changed) {
+                    enhanceReviews();
+                    scheduleMeasure();
+                    setTimeout(measure, 150);
+                    setTimeout(measure, 500);
+                }
+            }).observe(section, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ["hidden"] });
+            window.addEventListener("resize", scheduleMeasure);
+            window.addEventListener("load", scheduleMeasure);
+            if (document.fonts) {
+                document.fonts.ready.then(scheduleMeasure);
+                document.fonts.addEventListener("loadingdone", scheduleMeasure);
+            }
+            enhanceReviews();
+            scheduleMeasure();
+        }
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initAlumniReviews, { once: true });
+        else initAlumniReviews();
+    })();
+</script>
+<script src="assets/alumni.js?v=4"></script>
+<script src="assets/header-line.js?v=1"></script>
+</body>
+</html>
