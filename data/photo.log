@@ -1,0 +1,2 @@
+[2026-10-19 11:34:57] POST admin.php action=alumni_update post_keys=["sessid","action","fi","si","ai","name","year","photo","role","text"] files=["photo_file"] file_errors={"photo_file":0} content_length=60028 sessid_ok=Y content_type=multipart/form-data; boundary=----geckoformboundaryde473a9c9bc014f13eb026f6c85a3b9e
+[2026-10-19 11:34:57] OK {"saved":"/img/alumni/al-20261019-113457-0d5842.jpg","size":20437}
